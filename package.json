@@ -1,0 +1,14 @@
+{
+  "name": "nae-training-registration-requests",
+  "version": "2.1.1",
+  "private": true,
+  "description": "School workshop requests with one submission per school, Jotform reporting and atomic session selections",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env.local scripts/dev-server.js",
+    "test": "node --test tests/*.test.js",
+    "check:integration": "node --env-file-if-exists=.env.local scripts/check-integration.js"
+  }
+}

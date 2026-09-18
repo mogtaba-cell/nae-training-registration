@@ -1,0 +1,7 @@
+Desktop request journey with safe API fixtures and simulated submission: passed
+Unverified coordinator choices and required change fields: passed
+Missing coordinator can add all eight fields and continue: passed
+Empty school: both Oral History dates and add-teacher controls: passed
+Al Dhafra one-region-per-pathway flow: passed
+Mobile 390px layout without horizontal overflow: passed
+Browser JavaScript errors: 0

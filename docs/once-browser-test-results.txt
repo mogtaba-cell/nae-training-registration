@@ -1,0 +1,9 @@
+Already-submitted badge and school-wide blocker: passed
+Returning schools receive no coordinator, teacher or selection details: passed
+Stale dropdown status is refreshed on school selection: passed
+Another tab submits first: stale form transitions to blocked view on HTTP 409: passed
+Lost response after save: identical retry returns receipt with only one simulated commit: passed
+Lost connection before save: same request can safely retry: passed
+Double-click sends only one request; no register-another-school action: passed
+Returning school on a fresh mobile page is blocked without horizontal overflow: passed
+Browser JavaScript errors: 0

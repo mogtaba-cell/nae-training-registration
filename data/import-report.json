@@ -1,0 +1,20 @@
+{
+  "source": "Schools49(1).xlsx",
+  "schools": 286,
+  "sourceTeacherPathwayRows": 1192,
+  "consolidatedSchoolTeacherRecords": 825,
+  "coordinatorsVerifiedOnFile": 59,
+  "listedCoordinatorsAwaitingConfirmation": 219,
+  "schoolsWithoutCoordinator": 8,
+  "schoolsWithoutTeachers": 65,
+  "schoolsWithoutRegisteredPathways": 53,
+  "missingTeacherIdsRequiringEntryOnSelection": [
+    {
+      "schoolEsis": "1705AD",
+      "teacherId": "T-00cd4a28a63989ff6148",
+      "teacherName": "Abeer"
+    }
+  ],
+  "teacherPathwaysNotInSchoolRegisteredList": 105,
+  "note": "School pathways come ONLY from the coordinator sheet. A teacher nomination does not silently register the school in a new pathway. Blank formatting rows are ignored. Missing teacher IDs are requested when selecting that teacher."
+}

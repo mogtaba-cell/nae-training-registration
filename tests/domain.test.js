@@ -1,0 +1,77 @@
+'use strict';
+const test=require('node:test');const assert=require('node:assert/strict');const crypto=require('node:crypto');
+const domain=require('../lib/domain');
+const {data,publicSchool,eligibleSessions,validateRequest,resolveCoordinator}=domain;
+const all=domain.officialPathways;
+const ad=data.schools.find(s=>s.region==='Abu Dhabi'&&s.coordinator.verified&&s.teachers.length>=2);
+const unverified=data.schools.find(s=>s.coordinator.nameEnglish&&!s.coordinator.verified&&s.teachers.length);
+const noCoordinator=data.schools.find(s=>!s.coordinator.nameEnglish);
+const oral=data.sessions.filter(s=>s.pathway==='Oral History');
+const newCoordinator={nameEnglish:'Test Coordinator',nameArabic:'Test Arabic Name',esis:'PASS-TEST-C',position:'Coordinator',emiratesId:'784-2000-0000000-0',workEmail:'coordinator@example.invalid',primaryEmail:'primary@example.invalid',mobile:'0500000000'};
+const newTeacher={id:'A-test',nameEnglish:'Test Teacher',nameArabic:'Test Arabic Name',esis:'PASS-TEST-1',position:'Teacher',workEmail:'teacher@example.invalid',mobile:'0500000000'};
+function body(school=ad){return {requestId:crypto.randomUUID(),schoolEsis:school.schoolEsis,pathways:[...all],pathwaysReviewed:true,coordinator:{action:school.coordinator.verified?'verified':school.coordinator.nameEnglish?'confirm':'add',...(!school.coordinator.nameEnglish?newCoordinator:{})},addedTeachers:[],teacherIdentifiers:{},selections:[{sessionId:oral[0].id,teacherId:school.teachers[0]?.id||newTeacher.id}],acknowledgement:true};}
+test('Workbook import uses all 286 schools and consolidated teacher identities',()=>{
+ assert.equal(data.schools.length,286);assert.equal(new Set(data.schools.map(s=>s.schoolEsis)).size,286);
+ assert.equal(data.schools.reduce((n,s)=>n+s.teachers.length,0),825);
+ for(const s of data.schools){assert.equal(new Set(s.teachers.map(t=>t.id)).size,s.teachers.length);assert.ok(s.registeredPathways.every(p=>all.includes(p)));}
+});
+test('Verified badge corresponds only to the 59 Yes values in the workbook',()=>assert.equal(data.schools.filter(s=>s.coordinator.verified).length,59));
+test('Private contacts and identity numbers never occur in public school fields',()=>{
+ for(const s of data.schools){const value=publicSchool(s),json=JSON.stringify(value);for(const term of ['workEmail','primaryEmail','mobile','emiratesId','position'])assert.equal(json.includes('"'+term+'"'),false);assert.equal(value.coordinator.verified,s.coordinator.verified);}
+});
+test('Public session data excludes venue',()=>{for(const s of data.sessions)assert.equal('venue' in domain.publicSession(s),false);});
+test('Abu Dhabi regional routing; no Applied Arts training session invented',()=>{
+ const sessions=eligibleSessions(ad,all);assert.equal(sessions.length,6);assert.ok(sessions.every(s=>s.region==='Abu Dhabi'));assert.ok(!sessions.some(s=>s.pathway==='Applied Arts'));
+});
+test('Al Ain arts route locally; Performing Arts and Oral History route to Abu Dhabi',()=>{
+ const school=data.schools.find(s=>s.region==='Al Ain');const sessions=eligibleSessions(school,all);assert.equal(sessions.length,6);
+ for(const s of sessions)assert.equal(s.region,['Oral History','Performing Arts'].includes(s.pathway)?'Abu Dhabi':'Al Ain');
+});
+test('Al Dhafra can access both regional options before choosing one',()=>assert.equal(eligibleSessions(data.schools.find(s=>s.region==='Al Dhafra'),all).length,9));
+test('Al Dhafra cannot request both Abu Dhabi and Al Ain for the same pathway',()=>{
+ const school=data.schools.find(s=>s.region==='Al Dhafra');const b=body(school);const pair=data.sessions.filter(s=>s.pathway==='Visual Arts');
+ b.addedTeachers=[newTeacher];b.selections=pair.map(s=>({sessionId:s.id,teacherId:newTeacher.id}));
+ assert.throws(()=>validateRequest(b),/either Abu Dhabi or Al Ain/);
+});
+test('Schools without pathways still have both Oral History dates',()=>assert.deepEqual(eligibleSessions(ad,[]).map(s=>s.id),oral.map(s=>s.id)));
+test('Same teacher may request both Oral History sessions',()=>{const b=body();b.selections.push({sessionId:oral[1].id,teacherId:ad.teachers[0].id});assert.equal(validateRequest(b).payload.records.length,2);});
+test('Different teachers may request the two different Oral History dates',()=>{const b=body();b.selections.push({sessionId:oral[1].id,teacherId:ad.teachers[1].id});assert.equal(validateRequest(b).payload.records.length,2);});
+test('Two different teachers cannot request the same Oral History session',()=>{const b=body();b.selections.push({sessionId:oral[0].id,teacherId:ad.teachers[1].id});assert.throws(()=>validateRequest(b),/Only one teacher/);});
+test('Repeated identical session selection is rejected, not silently deduplicated',()=>{const b=body();b.selections.push({...b.selections[0]});assert.throws(()=>validateRequest(b),/Only one teacher/);});
+test('Teacher/session pairs for a wrong region are rejected server-side',()=>{const b=body();b.selections=[{sessionId:data.sessions.find(s=>s.pathway==='Visual Arts'&&s.region==='Al Ain').id,teacherId:ad.teachers[0].id}];assert.throws(()=>validateRequest(b),/pathways or region/);});
+test('Pathway acknowledgement is required',()=>{const b=body();b.pathwaysReviewed=false;assert.throws(()=>validateRequest(b),/review and verify/);});
+test('Pending review is set by the server, not a client status flag',()=>{const b=body();b.status='Approved';assert.equal(validateRequest(b).payload.records[0].status,'Pending review');});
+test('School selection is validated server-side',()=>{const b=body();b.schoolEsis='UNKNOWN';assert.throws(()=>validateRequest(b),/Choose a school/);});
+test('Unknown teacher cannot be injected into the school roster',()=>{const b=body();b.selections[0].teacherId='T-unknown';assert.throws(()=>validateRequest(b),/select or add a teacher/);});
+test('Verified coordinator comes from the master, not submitted contact overrides',()=>{const b=body();b.coordinator={action:'verified',nameEnglish:'Injected Name',workEmail:'injected@example.invalid'};assert.equal(validateRequest(b).payload.coordinator.nameEnglish,ad.coordinator.nameEnglish);});
+test('Unverified coordinator confirmation is not promoted to Verified on file',()=>{const c=resolveCoordinator(unverified,{action:'confirm'});assert.equal(c.action,'Confirmed by school');assert.equal(c.verified,false);assert.equal(c.workEmail,unverified.coordinator.workEmail);});
+test('Unverified coordinator cannot claim a verified-on-file action',()=>assert.throws(()=>resolveCoordinator(unverified,{action:'verified'}),/Confirm the listed coordinator/));
+test('Changing a coordinator collects all eight fields',()=>{const c=resolveCoordinator(unverified,{action:'change',...newCoordinator});assert.equal(c.emiratesId,'784200000000000');assert.equal(c.action,'Change requested');});
+test('New coordinator requires Arabic name and both emails',()=>{
+ for(const field of ['nameArabic','primaryEmail','workEmail']){const c={action:'add',...newCoordinator};delete c[field];assert.throws(()=>resolveCoordinator(noCoordinator,c),/complete all required/);}
+});
+test('Coordinator Emirates ID format is validated',()=>assert.throws(()=>resolveCoordinator(noCoordinator,{action:'add',...newCoordinator,emiratesId:'123'}),/15-digit/));
+test('A school with no teachers may add a teacher and submit a request',()=>{
+ const school=data.schools.find(s=>!s.teachers.length);const b=body(school);b.addedTeachers=[newTeacher];b.selections=[{sessionId:oral[0].id,teacherId:newTeacher.id}];assert.equal(validateRequest(b).payload.records[0].registrationType,'Added Teacher');
+});
+test('Additional teacher form requires all six fields',()=>{
+ for(const field of ['nameEnglish','nameArabic','esis','position','workEmail','mobile']){const b=body();b.addedTeachers=[{...newTeacher}];delete b.addedTeachers[0][field];b.selections[0].teacherId=newTeacher.id;assert.throws(()=>validateRequest(b),/complete all required/);}
+});
+test('Missing existing eSIS is requested rather than inventing an identifier',()=>{
+ const school=data.schools.find(s=>s.teachers.some(t=>!t.esis));const teacher=school.teachers.find(t=>!t.esis);const b=body(school);b.selections[0].teacherId=teacher.id;
+ assert.throws(()=>validateRequest(b),/missing eSIS/);b.teacherIdentifiers[teacher.id]='PASS-TEST-MISSING';assert.equal(validateRequest(b).payload.records[0].teacher.esis,'PASS-TEST-MISSING');
+});
+test('Idempotent input produces the same hash and request-record IDs',()=>{const b=body();const a=validateRequest(b),c=validateRequest(b);assert.equal(a.hash,c.hash);assert.equal(a.payload.records[0].id,c.payload.records[0].id);});
+test('Changing a request changes its hash',()=>{const b=body();const a=validateRequest(b);b.pathways=[];assert.notEqual(a.hash,validateRequest(b).hash);});
+test('Same additional teacher is reused across multiple distinct sessions',()=>{const b=body();b.addedTeachers=[newTeacher];b.selections=oral.map(s=>({sessionId:s.id,teacherId:newTeacher.id}));assert.equal(validateRequest(b).payload.records.length,2);});
+test('Duplicate additional teacher eSIS is rejected',()=>{const b=body();b.addedTeachers=[newTeacher,{...newTeacher,id:'A-second'}];b.selections=oral.map((s,i)=>({sessionId:s.id,teacherId:b.addedTeachers[i].id}));assert.throws(()=>validateRequest(b),/entered more than once/);});
+test('Adding a known Applied-only teacher cannot bypass their workshop eligibility',()=>{
+ const school=data.schools.find(s=>s.teachers.some(t=>t.pathways.length===1&&t.pathways[0]==='Applied Arts'));
+ const teacher=school.teachers.find(t=>t.pathways.length===1&&t.pathways[0]==='Applied Arts');
+ const b=body(school);const session=eligibleSessions(school,all).find(s=>s.pathway==='Visual Arts');
+ b.addedTeachers=[{...newTeacher,esis:teacher.esis,nameEnglish:teacher.nameEnglish}];b.selections=[{sessionId:session.id,teacherId:newTeacher.id}];
+ assert.throws(()=>validateRequest(b),/not eligible for this workshop/);
+});
+test('A verified coordinator cannot be replaced through a forged change action',()=>{
+ assert.throws(()=>resolveCoordinator(ad,{action:'change',...newCoordinator}),/already has a verified coordinator/);
+});
