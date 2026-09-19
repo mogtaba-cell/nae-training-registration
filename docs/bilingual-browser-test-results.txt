@@ -1,0 +1,8 @@
+English/Arabic toggle, top-right placement, Arabic-name search, keyboard selection and preserved pathway review: passed
+Session selections and six-field added-teacher draft survive switching languages; Arabic mobile digits accepted: passed
+Both mandatory acknowledgements block separately; Arabic submission and exact success messages in both languages: passed
+Language preference survives reload (simulated storage); Arabic digits find eSIS; school-wide already-submitted blocker remains active: passed
+Al Dhafra keeps one region per pathway; region change clears earlier teacher; retry after language change sends identical request: passed
+Unverified coordinator change form preserves all entered values and correct Arabic/LTR input directions: passed
+Arabic coordinator, sessions, review and success layouts checked at 320, 360, 390, 768 and 1280 pixels with no horizontal overflow: passed
+Browser JavaScript errors: 0

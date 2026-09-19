@@ -26,7 +26,10 @@
         "mobile": "0561544775",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة عالية",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9273",
@@ -49,7 +52,10 @@
         "mobile": "0569090504",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة اي بي سي الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9223",
@@ -136,7 +142,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة عبد الله بن الزبير الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "6004",
@@ -174,7 +183,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة عبدالله بن عتيبة",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9087",
@@ -206,7 +218,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة أبوظبي الهندية الخاصة- المرور",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9242",
@@ -280,7 +295,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة أبوظبي الهندية الخاصة- الوثبة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9060",
@@ -328,7 +346,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة أبوظبي الدولية الخاصة- الكرامة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9265",
@@ -402,7 +423,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة أبوظبي الدولية الخاصة- مدينة محمد بن زايد",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9239",
@@ -464,7 +488,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة جزيرة أبوظبي العالمية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9270",
@@ -501,7 +528,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدارس أدنوك- غياثي",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "9269",
@@ -613,7 +643,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدارس أدنوك- مدينة زايد",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "9268",
@@ -664,7 +697,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدارس ادنوك - الرويس",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "9267",
@@ -774,7 +810,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدارس أدنوك- ساس النخل",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "1391AD",
@@ -823,7 +862,10 @@
             "Visual Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة أحمد بن زايد",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "2082AD",
@@ -884,7 +926,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة أحمد خليفة السويدي بنين",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "2097AD",
@@ -970,7 +1015,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة عين الفايضة",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "6021",
@@ -1043,7 +1091,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "عين الفايضة",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9129",
@@ -1062,7 +1113,10 @@
         "mobile": "0503748873",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة عين الخليج الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "548AD",
@@ -1134,7 +1188,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة عائشة بنت ابي بكر بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9284",
@@ -1184,7 +1241,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة أجيال الدولية- الفلاح",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9249",
@@ -1209,7 +1269,10 @@
         "mobile": "",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة أجيال الدولية- مدينة محمد بن زايد",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9130",
@@ -1283,7 +1346,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الأضواء الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "6034",
@@ -1334,7 +1400,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة العهد",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9131",
@@ -1423,7 +1492,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة العين الأمريكية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9214",
@@ -1485,7 +1557,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "العين أكاديمية بريطانية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9132",
@@ -1504,7 +1579,10 @@
         "mobile": "0567927493",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة العين الناطقة بالإنجليزية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9134",
@@ -1569,7 +1647,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة العين التمهيدية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9135",
@@ -1629,7 +1710,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة أكاديمية الأندلس الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "471AD",
@@ -1688,7 +1772,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الأصايل بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "470AD",
@@ -1712,7 +1799,10 @@
         "mobile": "0503335838",
         "verified": true
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة العطاء",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9136",
@@ -1787,7 +1877,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الأوائل الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "6029",
@@ -1874,7 +1967,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة العزم",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9089",
@@ -1936,7 +2032,10 @@
             "Visual Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة البشائر الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9322",
@@ -1998,7 +2097,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة البسمة البريطانية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9090",
@@ -2021,7 +2123,10 @@
         "mobile": "",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة البطين العلمية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "522AD",
@@ -2056,7 +2161,10 @@
             "Visual Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة البوادي بنين",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "6037",
@@ -2154,7 +2262,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة البيرق",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "6005",
@@ -2193,7 +2304,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الدانة",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "366AD",
@@ -2212,7 +2326,10 @@
         "mobile": "0505302736",
         "verified": true
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة الدانات بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9138",
@@ -2247,7 +2364,10 @@
             "Visual Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الدار الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9182",
@@ -2371,7 +2491,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "المدرسة الظبيانية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9334",
@@ -2456,7 +2579,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "أكاديمية الظفرة الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9017",
@@ -2475,7 +2601,10 @@
         "mobile": "0526783607",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدارس الظفرة الخاصة- مدينة محمد بن زايد",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9139",
@@ -2587,7 +2716,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدارس الظفرة الخاصة- المويجعي",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "6022",
@@ -2673,7 +2805,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "الظاهر",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "2070AD",
@@ -2734,7 +2869,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الظنة",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "2069AD",
@@ -2797,7 +2935,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الظنة بنين",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "2071AD",
@@ -2907,7 +3048,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الظنة بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "9092",
@@ -2985,7 +3129,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الإيمان الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "482AD",
@@ -3047,7 +3194,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الارتقاء بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9078",
@@ -3123,7 +3273,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "أكاديمية الفلاح - الجيمي - العين",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9031",
@@ -3198,7 +3351,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "أكاديمية الفلاح - الخبيصي - العين",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9052",
@@ -3273,7 +3429,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "أكاديمية الفلاح - بني ياس",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9042",
@@ -3334,7 +3493,10 @@
             "Visual Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "أكاديمية الفلاح- مدينة محمد بن زايد",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "2094AD",
@@ -3353,7 +3515,10 @@
         "mobile": "0506729300",
         "verified": true
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة مدينة الفلاح",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "1398AD",
@@ -3372,7 +3537,10 @@
         "mobile": "0566114448",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة الفوعة بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "6017",
@@ -3432,7 +3600,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الغد",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "6040",
@@ -3482,7 +3653,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الغاف",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "484AD",
@@ -3545,7 +3719,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الغيث",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "253AD",
@@ -3564,7 +3741,10 @@
         "mobile": "0502258880",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة الغزالي بنين",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "6028",
@@ -3678,7 +3858,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الحصون",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "1562AD",
@@ -3697,7 +3880,10 @@
         "mobile": "0504467765",
         "verified": true
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة الحويتين",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "9141",
@@ -3744,7 +3930,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الإسراء الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9124",
@@ -3768,7 +3957,10 @@
         "mobile": "0569360861",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة الاتحاد الوطنية الخاصة- فلج هزاع",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9091",
@@ -3831,7 +4023,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الاتحاد الوطنية الخاصة- مدينة خليفة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9300",
@@ -3869,7 +4064,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الإتحاد الوطنية الخاصة -ذ.م.م - ش.ش.و- فرع",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "1087AD",
@@ -3888,7 +4086,10 @@
         "mobile": "0503304949",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة الجاهلي بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "6012",
@@ -3974,7 +4175,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الجنائن",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "1705AD",
@@ -4062,7 +4266,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "الجود",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9302",
@@ -4081,7 +4288,10 @@
         "mobile": "0507583667",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة الكرامة",
+      "schoolTypeArabic": "أصحاب الهمم",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9143",
@@ -4169,7 +4379,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الخليل الدولية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9343",
@@ -4219,7 +4432,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة المهارات الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "6031",
@@ -4322,7 +4538,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة المجد",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9144",
@@ -4382,7 +4601,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة المناهل الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9291",
@@ -4401,7 +4623,10 @@
         "mobile": "0593143633",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة المنارة الخاصة- مدينة محمد بن زايد",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9093",
@@ -4486,7 +4711,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة المنهل الدولية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9178",
@@ -4560,7 +4788,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة المرفأ الدولية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "2085AD",
@@ -4636,7 +4867,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة المرفأ بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "2084AD",
@@ -4710,7 +4944,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة المرفأ",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "1726AD",
@@ -4729,7 +4966,10 @@
         "mobile": "0508383996",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة المسيرة",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9055",
@@ -4790,7 +5030,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة المنهاج الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "348AD",
@@ -4822,7 +5065,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة المزدلفة",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9279",
@@ -4870,7 +5116,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة المنيرة الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "6023",
@@ -4921,7 +5170,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "المتنبي",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "406AD",
@@ -4959,7 +5211,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة النعيم بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9003",
@@ -5006,7 +5261,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة النهضة الوطنية للبنين",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9025",
@@ -5146,7 +5404,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة النهضة الوطنية للبنات",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "6035",
@@ -5219,7 +5480,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "النهضة",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "6013",
@@ -5306,7 +5570,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة النرجس",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "2002AD",
@@ -5325,7 +5592,10 @@
         "mobile": "0522427083",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة النبراس بنين",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "2111AD",
@@ -5347,7 +5617,10 @@
         "mobile": "0527737578",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة النخبه",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "6041",
@@ -5444,7 +5717,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة القيم",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "6030",
@@ -5539,7 +5815,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة القرم",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9287",
@@ -5577,7 +5856,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "اكاديمية الربيع",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "2057AD",
@@ -5668,7 +5950,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الرحبة",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "327AD",
@@ -5730,7 +6015,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الراقية",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "2096AD",
@@ -5829,7 +6117,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الروضة الشرقية",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "6020",
@@ -5968,7 +6259,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الرياحين",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "6014",
@@ -6017,7 +6311,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الريانة",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "6025",
@@ -6078,7 +6375,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الريف",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "411AD",
@@ -6114,7 +6414,10 @@
             "Visual Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الرفعة",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "542AD",
@@ -6175,7 +6478,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الرسالة",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "1383AD",
@@ -6198,7 +6504,10 @@
         "mobile": "0502233164",
         "verified": true
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة الريادة بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "6019",
@@ -6312,7 +6621,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "الرياض",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "417AD",
@@ -6360,7 +6672,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الرواد بنين",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9248",
@@ -6422,7 +6737,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الساد الهندية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "6009",
@@ -6507,7 +6825,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة السلام",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "424AD",
@@ -6582,7 +6903,10 @@
             "Visual Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة السمحة بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9147",
@@ -6601,7 +6925,10 @@
         "mobile": "0568830574",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة الصنوبر الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9148",
@@ -6662,7 +6989,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الصديق الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "1564AD",
@@ -6681,7 +7011,10 @@
         "mobile": "0501115405",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة الشبهانة بنين",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "368AD",
@@ -6744,7 +7077,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الشهامة بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "2105AD",
@@ -6793,7 +7129,10 @@
             "Visual Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة مدينة الشامخة",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "1384AD",
@@ -6842,7 +7181,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الشوامخ بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "1084AD",
@@ -6903,7 +7245,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة السمو",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "2072AD",
@@ -6952,7 +7297,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الصقور بنين",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "468AD",
@@ -6971,7 +7319,10 @@
         "mobile": "0502665569",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة التقدم",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "248AD",
@@ -7056,7 +7407,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الطويلة",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9254",
@@ -7075,7 +7429,10 @@
         "mobile": "0547848306",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة الثروات الوطنية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "6008",
@@ -7139,7 +7496,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الوطن",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9149",
@@ -7162,7 +7522,10 @@
         "mobile": "0544924171",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة وروضة اليحر الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9244",
@@ -7249,7 +7612,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الياسات الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "517AD",
@@ -7268,7 +7634,10 @@
         "mobile": "0505712160",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة الزايدية بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9140",
@@ -7332,7 +7701,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "المدرسة الحمدانية الكبرى الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9217",
@@ -7351,7 +7723,10 @@
         "mobile": "0555394773",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "المدرسة  المتحدة الدولية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9314",
@@ -7388,7 +7763,10 @@
             "Visual Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "المدرسة الوطنية الأمريكية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9342",
@@ -7438,7 +7816,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة أميتي الدولية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "ATS-AIN-B-HILI",
@@ -7500,7 +7881,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدارس التكنولوجيا التطبيقية - العين بنين - الهيلي",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9326",
@@ -7611,7 +7995,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة أرزنة الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9019",
@@ -7714,7 +8101,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة أشبال القدس الثانوية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9175",
@@ -7799,7 +8189,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "المدرسة الآسيوية الدولية الخاصة- مدينة زايد",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "9180",
@@ -7861,7 +8254,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "المدرسة الآسيوية الدولية الخاصة- الرويس",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "9289",
@@ -7880,7 +8276,10 @@
         "mobile": "0503843745",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة آسبن هايتس البريطانية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9027",
@@ -7956,7 +8355,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة أبوظبي الأسترالية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9100",
@@ -7979,7 +8381,10 @@
         "mobile": "0526340424",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة بيت المقدس الدولية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "2019AD",
@@ -8089,7 +8494,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة مدينة بني ياس بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9098",
@@ -8151,7 +8559,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة بني ياس الدولية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9099",
@@ -8214,7 +8625,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة براعم العين الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "1565AD",
@@ -8289,7 +8703,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة بعيا بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "9304",
@@ -8350,7 +8767,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة بيكون هاوس الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "1151AD",
@@ -8399,7 +8819,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة بدع المطاوعة",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "9222",
@@ -8447,7 +8870,10 @@
             "Visual Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة بلفدير البريطانية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9297",
@@ -8510,7 +8936,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة بلفدير العالمية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9303",
@@ -8544,7 +8973,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة بهافانز بيرل ويزدم",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9234",
@@ -8621,7 +9053,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "اكاديمية بلووم- العين",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9225",
@@ -8695,7 +9130,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الريادة المشرقة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9253",
@@ -8855,7 +9293,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الابداع البريطانية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9073",
@@ -8928,7 +9369,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الهلال الدولية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "2017AD",
@@ -8978,7 +9422,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة دلما",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "9104",
@@ -9103,7 +9550,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة دار العلوم الخاصة - بني ياس",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9186",
@@ -9212,7 +9662,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة دار العلوم الخاصة- فلج هزاع",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9233",
@@ -9231,7 +9684,10 @@
         "mobile": "0504042383",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة ضيافة الدولية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9294",
@@ -9268,7 +9724,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة ديونز انترناشيونال",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9271",
@@ -9330,7 +9789,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة النخبة الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9221",
@@ -9391,7 +9853,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "أكاديمية الامارات العلمية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "9153",
@@ -9480,7 +9945,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة صقر الإمارات الدولية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9224",
@@ -9553,7 +10021,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدارس الإمارات الوطنية - مجمع المناصير",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9106",
@@ -9663,7 +10134,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدارس الإمارات الوطنية - معسكر آل نهيان",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9107",
@@ -9682,7 +10156,10 @@
         "mobile": "0502689115",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة الامارات الخاصة- بني ياس",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9032",
@@ -9768,7 +10245,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الامارات الخاصة- المرور",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9155",
@@ -9787,7 +10267,10 @@
         "mobile": "0509666717",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة الإمارات الخاصة- المويجعي",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "1396AD",
@@ -9806,7 +10289,10 @@
         "mobile": "0509522232",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة فاطمة بنت مبارك بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9203",
@@ -9855,7 +10341,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "اكاديمية المستقبل الدولية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9296",
@@ -9932,7 +10421,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة قادة المستقبل الدولية الخاصة- بني ياس",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9308",
@@ -9995,7 +10487,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة قادة المستقبل الدولية الخاصة- الدانة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9013",
@@ -10080,7 +10575,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة قادة المستقبل الدولية- ربدان",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9286",
@@ -10154,7 +10652,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة جاردن سيتي البريطانية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9086",
@@ -10178,7 +10679,10 @@
         "mobile": "0509852084",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "اكاديمية جيمس الامريكية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9050",
@@ -10266,7 +10770,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة جيمس فاوندرز آي دي ليمتد",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9259",
@@ -10340,7 +10847,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة جيمس الهندية المتحده",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9230",
@@ -10359,7 +10869,10 @@
         "mobile": "0567361588",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة جيمس وينشستر",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9344",
@@ -10395,7 +10908,10 @@
             "Visual Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "أكاديمية جيمس العالمية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9048",
@@ -10515,7 +11031,10 @@
             "Visual Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "المدرسة الألمانية الدولية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "2065AD",
@@ -10590,7 +11109,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة غياثي",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "9158",
@@ -10609,7 +11131,10 @@
         "mobile": "0565211033",
         "verified": true
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة جلوبال الإنجليزية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9266",
@@ -10674,7 +11199,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "المدرسة العالمية الهندية الدولية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9023",
@@ -10734,7 +11262,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة أطفال الخير الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9208",
@@ -10783,7 +11314,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة وادي الرحمة الهندية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "497AD",
@@ -10870,7 +11404,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة حليمة السعدية",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "2073AD",
@@ -10931,7 +11468,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة حمودة بن علي",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "408AD",
@@ -10991,7 +11531,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة حمزة بن عبدالمطلب بنين",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "2098AD",
@@ -11052,7 +11595,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة هزاع بن زايد الأول",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "301AD",
@@ -11113,7 +11659,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة هيلي",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9103",
@@ -11187,7 +11736,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة هورايزن الخاصة- الوزاري- مدينة خليفة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9195",
@@ -11275,7 +11827,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة ابن خلدون العلمية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "320AD",
@@ -11294,7 +11849,10 @@
         "mobile": "0545551484",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة إبن سينا",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9161",
@@ -11379,7 +11937,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "المدرسة الهندية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9285",
@@ -11398,7 +11959,10 @@
         "mobile": "0528598487",
         "verified": true
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "المدرسة العلمية الدولية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9318",
@@ -11486,7 +12050,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدارس انترناشيونال كوميونيتي- الدانة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9313",
@@ -11584,7 +12151,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدارس انترناشيونال كوميونيتي- الفلاح",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9306",
@@ -11648,7 +12218,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدارس انترناشيونال كوميونيتي- الخالدية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9330",
@@ -11667,7 +12240,10 @@
         "mobile": "0525661032",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدارس انترناشيونال كوميونيتي- مدينة خليفة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "6010",
@@ -11706,7 +12282,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدارس انترناشيونال كوميونيتي- المشرف",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9111",
@@ -11725,7 +12304,10 @@
         "mobile": "0505411200",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة اليوبيل الدولية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9121",
@@ -11744,7 +12326,10 @@
         "mobile": "0553199567",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة الشويفات الدولية- مدينة خليفة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9109",
@@ -11807,7 +12392,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "المدرسة الإسلامية الإنجليزية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "6015",
@@ -11882,7 +12470,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة جبل حفيت",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "6024",
@@ -11940,7 +12531,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "جرن يافور",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "2067AD",
@@ -12014,7 +12608,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "خليفة بن زايد الأول",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "1079AD",
@@ -12038,7 +12635,10 @@
         "mobile": "0503249291",
         "verified": true
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة مدينة خليفة",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "1563AD",
@@ -12070,7 +12670,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة خنور",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "9076",
@@ -12155,7 +12758,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة نولدج انترناشيونال",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9163",
@@ -12253,7 +12859,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة ليوا الدولية- فلج هزاع",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9305",
@@ -12272,7 +12881,10 @@
         "mobile": "0506223470",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة ليوا الدولية-المشرف",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9338",
@@ -12358,7 +12970,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة ليوا الدولية -القطارة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9276",
@@ -12377,7 +12992,10 @@
         "mobile": "0508320083",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة ليوا الدولية للبنات",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9038",
@@ -12428,7 +13046,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "ليسيه لوي مسينيون",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9164",
@@ -12539,7 +13160,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة المدار الدولية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "2093AD",
@@ -12586,7 +13210,10 @@
             "Visual Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة مدينة الرياض بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9282",
@@ -12605,7 +13232,10 @@
         "mobile": "0552981296",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "المعمورة أكاديمية بريطانية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "7176",
@@ -12668,7 +13298,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة منار العلم الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "9165",
@@ -12687,7 +13320,10 @@
         "mobile": "0502145450",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة قصر المعرفة الدولية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "6036",
@@ -12763,7 +13399,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مريم بنت عمران",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9247",
@@ -12875,7 +13514,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة مايور الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "2030AD",
@@ -12935,7 +13577,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة المبزرة الخضراء بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9201",
@@ -13008,7 +13653,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الأرض السعيدة العالمية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "2083AD",
@@ -13027,7 +13675,10 @@
         "mobile": "0503222371",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة مليح بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9122",
@@ -13046,7 +13697,10 @@
         "mobile": "0564692102",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "المدرسة النموذجية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9246",
@@ -13065,7 +13719,10 @@
         "mobile": "0501724727",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "المدرسة محمد بن خالد آل نهيان",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "6006",
@@ -13141,7 +13798,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة مبارك بن محمد",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "6039",
@@ -13215,7 +13875,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة مبارك بن محمد (حلقة ثانيه )",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9191",
@@ -13238,7 +13901,10 @@
         "mobile": "0558399554",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "المنى أكاديمية بريطانية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "1173AD",
@@ -13257,7 +13923,10 @@
         "mobile": "0501103444",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة مريجب بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "535AD",
@@ -13307,7 +13976,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة ناهل",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "2063AD",
@@ -13344,7 +14016,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة نعمة بنين",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9167",
@@ -13363,7 +14038,10 @@
         "mobile": "0557366759",
         "verified": true
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "المدرسة الهندية النموذجية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9002",
@@ -13387,7 +14065,10 @@
         "mobile": "0557457201",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة نورد أنجليا الدولية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9001",
@@ -13461,7 +14142,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة نويا البريطانية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9127",
@@ -13597,7 +14281,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الواحة الدولية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9168",
@@ -13658,7 +14345,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرستنا الثانوية الإنجليزية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9021",
@@ -13707,7 +14397,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الجالية الباكستانية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9169",
@@ -13768,7 +14461,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "المدرسة الإسلامية الباكستانية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9029",
@@ -13804,7 +14500,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "اللؤلؤة أكاديمّية بريطانية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9250",
@@ -13853,7 +14552,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الفلبين الإماراتيه الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9319",
@@ -13954,7 +14656,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة بينكل الأمريكية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "9198",
@@ -14006,7 +14711,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "المدرسة الانجليزية الدوليه الخاصه",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "282AD",
@@ -14055,7 +14763,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة قطر الندى بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "6042",
@@ -14117,7 +14828,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "ربدان",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9316",
@@ -14165,7 +14879,10 @@
             "Visual Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الراحة الدولية خليفة أ",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9321",
@@ -14214,7 +14931,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة ريتش بريتش",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9236",
@@ -14233,7 +14953,10 @@
         "mobile": "0522469583",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة ريبتون للمرحلة الأساسية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9288",
@@ -14252,7 +14975,10 @@
         "mobile": "0507536364",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة ريبتون أبوظبي",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9114",
@@ -14374,7 +15100,10 @@
             "Visual Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "المدرسة الوردية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9320",
@@ -14397,7 +15126,10 @@
         "mobile": "0504798936",
         "verified": true
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة رواد الظفرة الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "9312",
@@ -14446,7 +15178,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة رويال الأمريكية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9260",
@@ -14481,7 +15216,10 @@
             "Visual Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة ريان انترناشونال",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9079",
@@ -14516,7 +15254,10 @@
             "Visual Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة سابس الدولية - البطين",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9317",
@@ -14535,7 +15276,10 @@
         "mobile": "0566014409",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة سابس الدولية- الرويس",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "الظفرة"
     },
     {
       "schoolEsis": "9275",
@@ -14557,7 +15301,10 @@
         "mobile": "0506626769",
         "verified": true
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة سابس الدولية- جزيرة ياس",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9340",
@@ -14582,7 +15329,10 @@
         "mobile": "0566966965",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة سما الدولية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "6044",
@@ -14646,7 +15396,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة صير بني ياس",
+      "schoolTypeArabic": "شراكات",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9116",
@@ -14665,7 +15418,10 @@
         "mobile": "0567116353",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسه الشيخ خليفه بن زايد البنغلاديشية الاسلامية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "272AD",
@@ -14684,7 +15440,10 @@
         "mobile": "0569479201",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة شخبوط بن سلطان بنين",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "525AD",
@@ -14720,7 +15479,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة شما بنت محمد",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9327",
@@ -14772,7 +15534,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الشارقة الأمريكية الدولية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "1702AD",
@@ -14879,7 +15644,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة شيخة بنت سرور",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "321AD",
@@ -14966,7 +15734,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة سلطان بن زايد بنين",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9226",
@@ -15078,7 +15849,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدراس القمة الدولية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9120",
@@ -15158,7 +15932,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الشروق الانجليزية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9332",
@@ -15259,7 +16036,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الشروق الدولية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9172",
@@ -15348,7 +16128,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة توام النموذجية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9117",
@@ -15387,7 +16170,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "المدرسة الأمريكية الدولية الخاصة، أبوظبي",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9190",
@@ -15447,7 +16233,10 @@
             "Visual Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة بريطانيا الدولية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9159",
@@ -15485,7 +16274,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة أكاديمية الخليج الدولية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9999",
@@ -15545,7 +16337,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مركز محمد بن راشد",
+      "schoolTypeArabic": "أصحاب الهمم",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9274",
@@ -15737,7 +16532,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة جلوبال الفلبينية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9252",
@@ -15756,7 +16554,10 @@
         "mobile": "",
         "verified": false
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "المدرسة الفلبينية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9339",
@@ -15792,7 +16593,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "المدرسة الروسية في ابوظبي",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9264",
@@ -15852,7 +16656,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "أكاديمية الشيخ زايد الخاصة للبنين",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9118",
@@ -15912,7 +16719,10 @@
             "Visual Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "اكاديمية الشيخ زايد الخاصة للبنات",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9315",
@@ -15976,7 +16786,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "المدرسة الاسبانية في أبوظبي",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "390AD",
@@ -16012,7 +16825,10 @@
             "Visual Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة أم الإمارات بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "539AD",
@@ -16031,7 +16847,10 @@
         "mobile": "0561293297",
         "verified": true
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة أم الفضل بنت الحارث بنات",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9216",
@@ -16153,7 +16972,10 @@
             "Visual Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "المدرسة المتحدة- اليحر",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9173",
@@ -16250,7 +17072,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "المدرسة العالمية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "9262",
@@ -16301,7 +17126,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة فرجينيا الدولية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9123",
@@ -16385,7 +17213,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الرؤية الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9293",
@@ -16448,7 +17279,10 @@
             "Digital Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة ويلز الدولية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9220",
@@ -16497,7 +17331,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة أكاديمية ياس",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9281",
@@ -16548,7 +17385,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "أكاديمية ياس الامريكية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "1724AD",
@@ -16683,7 +17523,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة ياس",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9192",
@@ -16782,7 +17625,10 @@
             "Literary Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة الياسمينة الأمريكية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9096",
@@ -16882,7 +17728,10 @@
             "Performing Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "الياسمينة أكاديمية بريطانية",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "9174",
@@ -16942,7 +17791,10 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة زاخر الخاصة",
+      "schoolTypeArabic": "خاصة",
+      "regionArabic": "العين"
     },
     {
       "schoolEsis": "2068AD",
@@ -16961,7 +17813,10 @@
         "mobile": "0506931290",
         "verified": true
       },
-      "teachers": []
+      "teachers": [],
+      "schoolNameArabic": "مدرسة زايد الخير بنين",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     },
     {
       "schoolEsis": "2066AD",
@@ -17021,7 +17876,32 @@
             "Applied Arts"
           ]
         }
-      ]
+      ],
+      "schoolNameArabic": "مدرسة مدينة زايد -الظفرة",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "الظفرة"
+    },
+    {
+      "schoolEsis": "2114AD",
+      "schoolName": "AlDhabi School",
+      "schoolType": "Public",
+      "region": "Abu Dhabi",
+      "registeredPathways": [],
+      "coordinator": {
+        "nameEnglish": "",
+        "nameArabic": "",
+        "esis": "",
+        "position": "",
+        "emiratesId": "",
+        "workEmail": "",
+        "primaryEmail": "",
+        "mobile": "",
+        "verified": false
+      },
+      "teachers": [],
+      "schoolNameArabic": "مدرسة الظبي",
+      "schoolTypeArabic": "حكومية",
+      "regionArabic": "أبوظبي"
     }
   ],
   "sessions": [
@@ -17097,5 +17977,6 @@
       "venue": "Alain - Al Qattara Art Center",
       "time": "9:30 AM - 2:00 PM"
     }
-  ]
+  ],
+  "schoolNamesSource": "school-names-bilingual.csv (supplied as schools (9).csv)"
 }

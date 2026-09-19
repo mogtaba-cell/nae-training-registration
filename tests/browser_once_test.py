@@ -40,6 +40,7 @@ with sync_playwright() as p:
             return {ok:status<400,status,json:async()=>structuredClone(value)};
           };
         }''',{'submitted':submitted,'failure':failure})
+        page.add_script_tag(content=(root/'public/i18n.js').read_text())
         page.add_script_tag(content=(root/'public/app.js').read_text())
         page.locator('#school-search').wait_for()
     def select_school():
@@ -47,7 +48,7 @@ with sync_playwright() as p:
     def review():
         select_school();page.locator('#pathways-reviewed').check();page.locator('#school-next').click()
         page.locator('[data-select-session="OH-A"]').first.check();page.locator('#sessions-next').click()
-        page.locator('#request-ack').check()
+        page.locator('#ack-once').check();page.locator('#ack-email').check()
     def blocked():
         expect(page.get_by_role('heading',name='Already submitted',exact=True)).to_be_visible()
         expect(page.locator('#school-next')).not_to_be_visible()

@@ -1,0 +1,5 @@
+Local API config: submission disabled without storage, optional school code disabled: PASS
+Actual school directory API: 287 bilingual school names: PASS
+Actual school detail API: Arabic names present, stored contacts/identity fields excluded: PASS
+Bilingual catalogue served as UTF-8 JavaScript: PASS
+Private server dataset/settings cannot be fetched as static assets: PASS

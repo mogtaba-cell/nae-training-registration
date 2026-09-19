@@ -9,9 +9,9 @@ const noCoordinator=data.schools.find(s=>!s.coordinator.nameEnglish);
 const oral=data.sessions.filter(s=>s.pathway==='Oral History');
 const newCoordinator={nameEnglish:'Test Coordinator',nameArabic:'Test Arabic Name',esis:'PASS-TEST-C',position:'Coordinator',emiratesId:'784-2000-0000000-0',workEmail:'coordinator@example.invalid',primaryEmail:'primary@example.invalid',mobile:'0500000000'};
 const newTeacher={id:'A-test',nameEnglish:'Test Teacher',nameArabic:'Test Arabic Name',esis:'PASS-TEST-1',position:'Teacher',workEmail:'teacher@example.invalid',mobile:'0500000000'};
-function body(school=ad){return {requestId:crypto.randomUUID(),schoolEsis:school.schoolEsis,pathways:[...all],pathwaysReviewed:true,coordinator:{action:school.coordinator.verified?'verified':school.coordinator.nameEnglish?'confirm':'add',...(!school.coordinator.nameEnglish?newCoordinator:{})},addedTeachers:[],teacherIdentifiers:{},selections:[{sessionId:oral[0].id,teacherId:school.teachers[0]?.id||newTeacher.id}],acknowledgement:true};}
-test('Workbook import uses all 286 schools and consolidated teacher identities',()=>{
- assert.equal(data.schools.length,286);assert.equal(new Set(data.schools.map(s=>s.schoolEsis)).size,286);
+function body(school=ad){return {requestId:crypto.randomUUID(),schoolEsis:school.schoolEsis,pathways:[...all],pathwaysReviewed:true,coordinator:{action:school.coordinator.verified?'verified':school.coordinator.nameEnglish?'confirm':'add',...(!school.coordinator.nameEnglish?newCoordinator:{})},addedTeachers:[],teacherIdentifiers:{},selections:[{sessionId:oral[0].id,teacherId:school.teachers[0]?.id||newTeacher.id}],acknowledgement:true,language:'en',acknowledgements:{onceOnly:true,emailConfirmation:true}};}
+test('Workbook import uses all 287 schools and consolidated teacher identities',()=>{
+ assert.equal(data.schools.length,287);assert.equal(new Set(data.schools.map(s=>s.schoolEsis)).size,287);
  assert.equal(data.schools.reduce((n,s)=>n+s.teachers.length,0),825);
  for(const s of data.schools){assert.equal(new Set(s.teachers.map(t=>t.id)).size,s.teachers.length);assert.ok(s.registeredPathways.every(p=>all.includes(p)));}
 });

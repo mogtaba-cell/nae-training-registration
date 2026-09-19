@@ -11,7 +11,7 @@ module.exports=async(req,res)=>{
     if(status.alreadySubmitted){
       // Only public school identity and a boolean. No roster, coordinator,
       // receipt ID, selections or contact information for a submitted school.
-      return res.status(200).json({schoolEsis:school.schoolEsis,schoolName:school.schoolName,region:school.region,
+      return res.status(200).json({schoolEsis:school.schoolEsis,schoolName:school.schoolName,schoolNameArabic:school.schoolNameArabic,region:school.region,
         alreadySubmitted:true,storageConfigured:configured,previewOnly:isLocalPreview()});
     }
     requireSchoolAccess(req,school.schoolEsis);

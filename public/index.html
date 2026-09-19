@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,38 +7,38 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Training registration | NAE 2026</title>
   <link rel="stylesheet" href="/styles.css">
+  <script src="/i18n.js" defer></script>
   <script src="/app.js" defer></script>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to registration</a>
+<a class="skip-link" href="#main" data-i18n="Skip to registration">Skip to registration</a>
 <div class="site-shell">
   <header class="masthead">
-    <a class="brand" href="#" aria-label="NAE Teacher Training 2026">
+    <div class="brand" aria-label="NAE - برنامج وطني ابداعي">
       <span class="brand-mark" aria-hidden="true">N</span>
-      <span>NAE<span class="brand-sub">TEACHER TRAINING 2026</span></span>
-    </a>
-    <span class="header-note">A space to learn. A chance to inspire.</span>
+      <span class="brand-wordmark"><span class="brand-title" dir="ltr"><bdi>NAE</bdi><span class="brand-divider">-</span><span lang="ar" dir="rtl">برنامج وطني ابداعي</span></span></span>
+    </div>
+    <div class="header-tools"><button class="language-toggle" type="button" id="language-toggle" data-language-toggle lang="ar" dir="rtl" aria-label="Switch to Arabic">العربية</button></div>
   </header>
   <section class="intro" aria-labelledby="page-title">
-    <p class="eyebrow">WORKSHOP REQUESTS</p>
-    <h1 id="page-title">Training registration</h1>
-    <p>Review your school details, choose a teacher for each workshop, and send your requests for review.</p>
-    <div class="process-note"><span class="note-icon" aria-hidden="true">i</span><span><strong>A request, not a confirmed place.</strong> We will review all requests and email the selected teachers later.</span></div>
+    <h1 id="page-title" data-i18n="Training registration">Training registration</h1>
+    <p data-i18n="Review your school details, choose a teacher for each workshop, and send your requests for review.">Review your school details, choose a teacher for each workshop, and send your requests for review.</p>
+    <div class="process-note"><span class="note-icon" aria-hidden="true">i</span><span><strong data-i18n="A request, not a confirmed place.">A request, not a confirmed place.</strong> <span data-i18n="We will review all requests and email the selected teachers later.">We will review all requests and email the selected teachers later.</span></span></div>
   </section>
-  <nav class="steps" aria-label="Registration progress" id="steps"></nav>
+  <nav class="steps" aria-label="Registration progress" data-i18n-label="Registration progress" id="steps"></nav>
   <div id="setup-note" class="notice warning" hidden></div>
   <main id="main" tabindex="-1"></main>
-  <footer class="site-footer"><span>NAE &middot; Teacher Training 2026</span><span>All session times are UAE local time.</span></footer>
+  <footer class="site-footer"><span><bdi>NAE</bdi> - <span lang="ar" dir="rtl">برنامج وطني ابداعي</span></span><span data-i18n="All session times are UAE local time.">All session times are UAE local time.</span></footer>
 </div>
 <div id="live-message" class="sr-only" role="status" aria-live="polite"></div>
 <div id="toast" class="toast" role="status" hidden></div>
 <dialog id="teacher-dialog" aria-labelledby="teacher-dialog-title">
-  <div class="dialog-header"><div><p class="eyebrow">ADD A TEACHER</p><h2 id="teacher-dialog-title">Register another teacher</h2><p id="dialog-context" class="muted"></p></div><button class="icon-button" id="close-dialog" type="button" aria-label="Close teacher details">&times;</button></div>
+  <div class="dialog-header"><div><p class="eyebrow" data-i18n="ADD A TEACHER">ADD A TEACHER</p><h2 id="teacher-dialog-title" data-i18n="Register another teacher">Register another teacher</h2><p id="dialog-context" class="muted"></p></div><div class="dialog-tools"><button class="language-toggle small" type="button" id="dialog-language-toggle" data-language-toggle lang="ar">العربية</button><button class="icon-button" id="close-dialog" type="button" aria-label="Close teacher details" data-i18n-label="Close teacher details">&times;</button></div></div>
   <form id="teacher-form">
-    <p class="helper">This teacher can also be selected for other sessions. All fields below are required.</p>
+    <p class="helper" data-i18n="This teacher can also be selected for other sessions. All fields below are required.">This teacher can also be selected for other sessions. All fields below are required.</p>
     <div id="teacher-fields" class="field-grid"></div>
     <p class="form-error" id="teacher-error" role="alert" hidden></p>
-    <div class="dialog-actions"><button class="button secondary" type="button" id="cancel-teacher">Cancel</button><button class="button primary" type="submit">Save and select teacher</button></div>
+    <div class="dialog-actions"><button class="button secondary" type="button" id="cancel-teacher" data-i18n="Cancel">Cancel</button><button class="button primary" type="submit" data-i18n="Save and select teacher">Save and select teacher</button></div>
   </form>
 </dialog>
 </body>

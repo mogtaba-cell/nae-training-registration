@@ -1,358 +1,460 @@
 
-> nae-training-registration-requests@2.1.1 test
+> nae-training-registration-requests@2.2.0 test
 > node --test tests/*.test.js
 
 TAP version 13
-# Subtest: Workbook import uses all 286 schools and consolidated teacher identities
-ok 1 - Workbook import uses all 286 schools and consolidated teacher identities
+# Subtest: Both separate acknowledgements are required; the legacy flag alone is not enough
+ok 1 - Both separate acknowledgements are required; the legacy flag alone is not enough
   ---
-  duration_ms: 1.993015
+  duration_ms: 2.492186
+  type: 'test'
+  ...
+# Subtest: English acceptance is saved with exact requested statements and a policy version
+ok 2 - English acceptance is saved with exact requested statements and a policy version
+  ---
+  duration_ms: 1.713306
+  type: 'test'
+  ...
+# Subtest: Arabic acceptance is stored from the authoritative catalogue, not client-supplied text
+ok 3 - Arabic acceptance is stored from the authoritative catalogue, not client-supplied text
+  ---
+  duration_ms: 0.378213
+  type: 'test'
+  ...
+# Subtest: Language-neutral data IDs remain canonical English values for Jotform routing
+ok 4 - Language-neutral data IDs remain canonical English values for Jotform routing
+  ---
+  duration_ms: 0.31714
+  type: 'test'
+  ...
+# Subtest: Retries with unchanged language and consent produce exactly the same stored payload hash
+ok 5 - Retries with unchanged language and consent produce exactly the same stored payload hash
+  ---
+  duration_ms: 0.502831
+  type: 'test'
+  ...
+# Subtest: Jotform Notes include the two accepted statements without changing existing question labels
+ok 6 - Jotform Notes include the two accepted statements without changing existing question labels
+  ---
+  duration_ms: 0.640331
+  type: 'test'
+  ...
+# Subtest: Legacy Jotform sync does not claim new acknowledgements were accepted
+ok 7 - Legacy Jotform sync does not claim new acknowledgements were accepted
+  ---
+  duration_ms: 0.308998
+  type: 'test'
+  ...
+# Subtest: All 287 school records have Arabic names, and the new school starts without invented nominees
+ok 8 - All 287 school records have Arabic names, and the new school starts without invented nominees
+  ---
+  duration_ms: 0.408209
+  type: 'test'
+  ...
+# Subtest: Public bilingual names do not expose coordinator contact or identity fields
+ok 9 - Public bilingual names do not expose coordinator contact or identity fields
+  ---
+  duration_ms: 1.497549
+  type: 'test'
+  ...
+# Subtest: Search normalization supports Arabic digits, diacritics, alef and tatweel variations
+ok 10 - Search normalization supports Arabic digits, diacritics, alef and tatweel variations
+  ---
+  duration_ms: 0.739851
+  type: 'test'
+  ...
+# Subtest: Language selection defaults safely to English and uses supplied names
+ok 11 - Language selection defaults safely to English and uses supplied names
+  ---
+  duration_ms: 0.244119
+  type: 'test'
+  ...
+# Subtest: Acknowledgement wording exactly matches the supplied English and Arabic
+ok 12 - Acknowledgement wording exactly matches the supplied English and Arabic
+  ---
+  duration_ms: 0.134053
+  type: 'test'
+  ...
+# Subtest: Success messages use the exact supplied availability and confirmation wording
+ok 13 - Success messages use the exact supplied availability and confirmation wording
+  ---
+  duration_ms: 0.138239
+  type: 'test'
+  ...
+# Subtest: Dynamic validation errors are Arabic, including coordinator fields and Al Dhafra routing
+ok 14 - Dynamic validation errors are Arabic, including coordinator fields and Al Dhafra routing
+  ---
+  duration_ms: 0.500828
+  type: 'test'
+  ...
+# Subtest: Arabic input numerals are normalized server-side for new coordinator identifiers
+ok 15 - Arabic input numerals are normalized server-side for new coordinator identifiers
+  ---
+  duration_ms: 0.482732
+  type: 'test'
+  ...
+# Subtest: Every literal user-facing catalogue key has an Arabic translation
+ok 16 - Every literal user-facing catalogue key has an Arabic translation
+  ---
+  duration_ms: 1.027607
+  type: 'test'
+  ...
+# Subtest: The two review controls are separate, required checkboxes with no default consent
+ok 17 - The two review controls are separate, required checkboxes with no default consent
+  ---
+  duration_ms: 1.191596
+  type: 'test'
+  ...
+# Subtest: Workbook import uses all 287 schools and consolidated teacher identities
+ok 18 - Workbook import uses all 287 schools and consolidated teacher identities
+  ---
+  duration_ms: 1.822851
   type: 'test'
   ...
 # Subtest: Verified badge corresponds only to the 59 Yes values in the workbook
-ok 2 - Verified badge corresponds only to the 59 Yes values in the workbook
+ok 19 - Verified badge corresponds only to the 59 Yes values in the workbook
   ---
-  duration_ms: 0.247424
+  duration_ms: 0.163968
   type: 'test'
   ...
 # Subtest: Private contacts and identity numbers never occur in public school fields
-ok 3 - Private contacts and identity numbers never occur in public school fields
+ok 20 - Private contacts and identity numbers never occur in public school fields
   ---
-  duration_ms: 3.077166
+  duration_ms: 3.367953
   type: 'test'
   ...
 # Subtest: Public session data excludes venue
-ok 4 - Public session data excludes venue
+ok 21 - Public session data excludes venue
   ---
-  duration_ms: 0.383404
+  duration_ms: 0.196498
   type: 'test'
   ...
 # Subtest: Abu Dhabi regional routing; no Applied Arts training session invented
-ok 5 - Abu Dhabi regional routing; no Applied Arts training session invented
+ok 22 - Abu Dhabi regional routing; no Applied Arts training session invented
   ---
-  duration_ms: 0.293833
+  duration_ms: 0.205191
   type: 'test'
   ...
 # Subtest: Al Ain arts route locally; Performing Arts and Oral History route to Abu Dhabi
-ok 6 - Al Ain arts route locally; Performing Arts and Oral History route to Abu Dhabi
+ok 23 - Al Ain arts route locally; Performing Arts and Oral History route to Abu Dhabi
   ---
-  duration_ms: 0.221195
+  duration_ms: 0.175736
   type: 'test'
   ...
 # Subtest: Al Dhafra can access both regional options before choosing one
-ok 7 - Al Dhafra can access both regional options before choosing one
+ok 24 - Al Dhafra can access both regional options before choosing one
   ---
-  duration_ms: 0.150128
+  duration_ms: 0.167624
   type: 'test'
   ...
 # Subtest: Al Dhafra cannot request both Abu Dhabi and Al Ain for the same pathway
-ok 8 - Al Dhafra cannot request both Abu Dhabi and Al Ain for the same pathway
+ok 25 - Al Dhafra cannot request both Abu Dhabi and Al Ain for the same pathway
   ---
-  duration_ms: 2.622683
+  duration_ms: 2.387747
   type: 'test'
   ...
 # Subtest: Schools without pathways still have both Oral History dates
-ok 9 - Schools without pathways still have both Oral History dates
+ok 26 - Schools without pathways still have both Oral History dates
   ---
-  duration_ms: 1.131969
+  duration_ms: 1.06942
   type: 'test'
   ...
 # Subtest: Same teacher may request both Oral History sessions
-ok 10 - Same teacher may request both Oral History sessions
+ok 27 - Same teacher may request both Oral History sessions
   ---
-  duration_ms: 11.781473
+  duration_ms: 10.096157
   type: 'test'
   ...
 # Subtest: Different teachers may request the two different Oral History dates
-ok 11 - Different teachers may request the two different Oral History dates
+ok 28 - Different teachers may request the two different Oral History dates
   ---
-  duration_ms: 0.3901
+  duration_ms: 0.598917
   type: 'test'
   ...
 # Subtest: Two different teachers cannot request the same Oral History session
-ok 12 - Two different teachers cannot request the same Oral History session
+ok 29 - Two different teachers cannot request the same Oral History session
   ---
-  duration_ms: 0.347416
+  duration_ms: 0.186272
   type: 'test'
   ...
 # Subtest: Repeated identical session selection is rejected, not silently deduplicated
-ok 13 - Repeated identical session selection is rejected, not silently deduplicated
+ok 30 - Repeated identical session selection is rejected, not silently deduplicated
   ---
-  duration_ms: 0.4539
+  duration_ms: 0.252132
   type: 'test'
   ...
 # Subtest: Teacher/session pairs for a wrong region are rejected server-side
-ok 14 - Teacher/session pairs for a wrong region are rejected server-side
+ok 31 - Teacher/session pairs for a wrong region are rejected server-side
   ---
-  duration_ms: 0.337251
+  duration_ms: 0.206923
   type: 'test'
   ...
 # Subtest: Pathway acknowledgement is required
-ok 15 - Pathway acknowledgement is required
+ok 32 - Pathway acknowledgement is required
   ---
-  duration_ms: 1.281807
+  duration_ms: 0.138891
   type: 'test'
   ...
 # Subtest: Pending review is set by the server, not a client status flag
-ok 16 - Pending review is set by the server, not a client status flag
+ok 33 - Pending review is set by the server, not a client status flag
   ---
-  duration_ms: 0.278969
+  duration_ms: 0.266323
   type: 'test'
   ...
 # Subtest: School selection is validated server-side
-ok 17 - School selection is validated server-side
+ok 34 - School selection is validated server-side
   ---
-  duration_ms: 0.444714
+  duration_ms: 0.235136
   type: 'test'
   ...
 # Subtest: Unknown teacher cannot be injected into the school roster
-ok 18 - Unknown teacher cannot be injected into the school roster
+ok 35 - Unknown teacher cannot be injected into the school roster
   ---
-  duration_ms: 0.249614
+  duration_ms: 0.232071
   type: 'test'
   ...
 # Subtest: Verified coordinator comes from the master, not submitted contact overrides
-ok 19 - Verified coordinator comes from the master, not submitted contact overrides
+ok 36 - Verified coordinator comes from the master, not submitted contact overrides
   ---
-  duration_ms: 0.265718
+  duration_ms: 0.235877
   type: 'test'
   ...
 # Subtest: Unverified coordinator confirmation is not promoted to Verified on file
-ok 20 - Unverified coordinator confirmation is not promoted to Verified on file
+ok 37 - Unverified coordinator confirmation is not promoted to Verified on file
   ---
-  duration_ms: 0.132333
+  duration_ms: 0.136617
   type: 'test'
   ...
 # Subtest: Unverified coordinator cannot claim a verified-on-file action
-ok 21 - Unverified coordinator cannot claim a verified-on-file action
+ok 38 - Unverified coordinator cannot claim a verified-on-file action
   ---
-  duration_ms: 0.14262
+  duration_ms: 0.142225
   type: 'test'
   ...
 # Subtest: Changing a coordinator collects all eight fields
-ok 22 - Changing a coordinator collects all eight fields
+ok 39 - Changing a coordinator collects all eight fields
   ---
-  duration_ms: 0.303204
+  duration_ms: 0.333806
   type: 'test'
   ...
 # Subtest: New coordinator requires Arabic name and both emails
-ok 23 - New coordinator requires Arabic name and both emails
+ok 40 - New coordinator requires Arabic name and both emails
   ---
-  duration_ms: 0.42187
+  duration_ms: 0.367677
   type: 'test'
   ...
 # Subtest: Coordinator Emirates ID format is validated
-ok 24 - Coordinator Emirates ID format is validated
+ok 41 - Coordinator Emirates ID format is validated
   ---
-  duration_ms: 0.243803
+  duration_ms: 0.228606
   type: 'test'
   ...
 # Subtest: A school with no teachers may add a teacher and submit a request
-ok 25 - A school with no teachers may add a teacher and submit a request
+ok 42 - A school with no teachers may add a teacher and submit a request
   ---
-  duration_ms: 0.651093
+  duration_ms: 0.486117
   type: 'test'
   ...
 # Subtest: Additional teacher form requires all six fields
-ok 26 - Additional teacher form requires all six fields
+ok 43 - Additional teacher form requires all six fields
   ---
-  duration_ms: 0.430167
+  duration_ms: 0.385053
   type: 'test'
   ...
 # Subtest: Missing existing eSIS is requested rather than inventing an identifier
-ok 27 - Missing existing eSIS is requested rather than inventing an identifier
+ok 44 - Missing existing eSIS is requested rather than inventing an identifier
   ---
-  duration_ms: 0.559929
+  duration_ms: 0.426196
   type: 'test'
   ...
 # Subtest: Idempotent input produces the same hash and request-record IDs
-ok 28 - Idempotent input produces the same hash and request-record IDs
+ok 45 - Idempotent input produces the same hash and request-record IDs
   ---
-  duration_ms: 0.204747
+  duration_ms: 0.204199
   type: 'test'
   ...
 # Subtest: Changing a request changes its hash
-ok 29 - Changing a request changes its hash
+ok 46 - Changing a request changes its hash
   ---
-  duration_ms: 0.19333
+  duration_ms: 0.279273
   type: 'test'
   ...
 # Subtest: Same additional teacher is reused across multiple distinct sessions
-ok 30 - Same additional teacher is reused across multiple distinct sessions
+ok 47 - Same additional teacher is reused across multiple distinct sessions
   ---
-  duration_ms: 0.275234
+  duration_ms: 0.330812
   type: 'test'
   ...
 # Subtest: Duplicate additional teacher eSIS is rejected
-ok 31 - Duplicate additional teacher eSIS is rejected
+ok 48 - Duplicate additional teacher eSIS is rejected
   ---
-  duration_ms: 0.347921
+  duration_ms: 0.242488
   type: 'test'
   ...
 # Subtest: Adding a known Applied-only teacher cannot bypass their workshop eligibility
-ok 32 - Adding a known Applied-only teacher cannot bypass their workshop eligibility
+ok 49 - Adding a known Applied-only teacher cannot bypass their workshop eligibility
   ---
-  duration_ms: 0.267015
+  duration_ms: 0.264892
   type: 'test'
   ...
 # Subtest: A verified coordinator cannot be replaced through a forged change action
-ok 33 - A verified coordinator cannot be replaced through a forged change action
+ok 50 - A verified coordinator cannot be replaced through a forged change action
   ---
-  duration_ms: 0.105565
+  duration_ms: 0.120352
   type: 'test'
   ...
 # Subtest: Jotform mapper writes request status and all new information, not attendance confirmation
-ok 34 - Jotform mapper writes request status and all new information, not attendance confirmation
+ok 51 - Jotform mapper writes request status and all new information, not attendance confirmation
   ---
-  duration_ms: 1.234988
+  duration_ms: 1.239869
   type: 'test'
   ...
 # Subtest: Jotform serializes multi-select school pathways as separate answers
-ok 35 - Jotform serializes multi-select school pathways as separate answers
+ok 52 - Jotform serializes multi-select school pathways as separate answers
   ---
-  duration_ms: 0.179834
+  duration_ms: 0.232051
   type: 'test'
   ...
 # Subtest: Jotform date serialization has the correct day, month, and year
-ok 36 - Jotform date serialization has the correct day, month, and year
+ok 53 - Jotform date serialization has the correct day, month, and year
   ---
-  duration_ms: 0.190129
+  duration_ms: 0.127043
   type: 'test'
   ...
 # Subtest: Optional school code gate validates the school-specific HMAC
-ok 37 - Optional school code gate validates the school-specific HMAC
+ok 54 - Optional school code gate validates the school-specific HMAC
   ---
-  duration_ms: 1.204417
+  duration_ms: 1.087337
   type: 'test'
   ...
 # Subtest: Persistent schema contains cross-request uniqueness, RLS, atomic submission and restricted access
-ok 38 - Persistent schema contains cross-request uniqueness, RLS, atomic submission and restricted access
+ok 55 - Persistent schema contains cross-request uniqueness, RLS, atomic submission and restricted access
   ---
-  duration_ms: 0.454792
+  duration_ms: 0.374968
   type: 'test'
   ...
 # Subtest: Every school response omits coordinator/teacher contact values
-ok 39 - Every school response omits coordinator/teacher contact values
+ok 56 - Every school response omits coordinator/teacher contact values
   ---
-  duration_ms: 1.093959
+  duration_ms: 1.144504
   type: 'test'
   ...
 # Subtest: Missing database configuration fails closed instead of accepting an unprotected request
-ok 40 - Missing database configuration fails closed instead of accepting an unprotected request
+ok 57 - Missing database configuration fails closed instead of accepting an unprotected request
   ---
-  duration_ms: 0.645825
+  duration_ms: 0.514509
   type: 'test'
   ...
 # Subtest: Public assets contain neither coordinator contacts nor legacy confirmation banners
-ok 41 - Public assets contain neither coordinator contacts nor legacy confirmation banners
+ok 58 - Public assets contain neither coordinator contacts nor legacy confirmation banners
   ---
-  duration_ms: 0.743813
+  duration_ms: 0.568832
   type: 'test'
   ...
 # Portal operation failed: STORAGE_UNAVAILABLE
 # Jotform sync pending; request saved.
 # Subtest: School directory shows Already submitted flags without contacts and is never cached
-ok 42 - School directory shows Already submitted flags without contacts and is never cached
+ok 59 - School directory shows Already submitted flags without contacts and is never cached
   ---
-  duration_ms: 4.082178
+  duration_ms: 2.545486
   type: 'test'
   ...
 # Subtest: Selecting a submitted school returns a blocker, not its roster or coordinator
-ok 43 - Selecting a submitted school returns a blocker, not its roster or coordinator
+ok 60 - Selecting a submitted school returns a blocker, not its roster or coordinator
   ---
-  duration_ms: 0.839978
+  duration_ms: 0.526808
   type: 'test'
   ...
 # Subtest: Minimal public submitted status does not disclose protected information when access codes are enabled
-ok 44 - Minimal public submitted status does not disclose protected information when access codes are enabled
+ok 61 - Minimal public submitted status does not disclose protected information when access codes are enabled
   ---
-  duration_ms: 1.104918
+  duration_ms: 0.690977
   type: 'test'
   ...
 # Subtest: Unsubmitted schools still require the correct school access code
-ok 45 - Unsubmitted schools still require the correct school access code
+ok 62 - Unsubmitted schools still require the correct school access code
   ---
-  duration_ms: 1.584873
+  duration_ms: 1.056511
   type: 'test'
   ...
 # Subtest: School lookup rechecks durable status instead of trusting an earlier directory result
-ok 46 - School lookup rechecks durable status instead of trusting an earlier directory result
+ok 63 - School lookup rechecks durable status instead of trusting an earlier directory result
   ---
-  duration_ms: 0.777823
+  duration_ms: 0.531435
   type: 'test'
   ...
 # Subtest: Database outage does not mistakenly label an already-submitted school as available
-ok 47 - Database outage does not mistakenly label an already-submitted school as available
+ok 64 - Database outage does not mistakenly label an already-submitted school as available
   ---
-  duration_ms: 1.387829
+  duration_ms: 0.933013
   type: 'test'
   ...
 # Subtest: Store translates school-wide lock rejection to a clear HTTP 409 business error
-ok 48 - Store translates school-wide lock rejection to a clear HTTP 409 business error
+ok 65 - Store translates school-wide lock rejection to a clear HTTP 409 business error
   ---
-  duration_ms: 1.424212
+  duration_ms: 0.843147
   type: 'test'
   ...
 # Subtest: Store does not confuse an unrelated unique violation with a school lock
-ok 49 - Store does not confuse an unrelated unique violation with a school lock
+ok 66 - Store does not confuse an unrelated unique violation with a school lock
   ---
-  duration_ms: 0.528063
+  duration_ms: 0.425835
   type: 'test'
   ...
 # Subtest: School status fetch normalizes eSIS and requests only a school identifier
-ok 50 - School status fetch normalizes eSIS and requests only a school identifier
+ok 67 - School status fetch normalizes eSIS and requests only a school identifier
   ---
-  duration_ms: 0.866238
+  duration_ms: 0.665678
   type: 'test'
   ...
 # Subtest: First school submission commits before synchronization and returns receipt
-ok 51 - First school submission commits before synchronization and returns receipt
+ok 68 - First school submission commits before synchronization and returns receipt
   ---
-  duration_ms: 3.698754
+  duration_ms: 3.427633
   type: 'test'
   ...
 # Subtest: Identical saved request retry returns its existing receipt instead of a second request
-ok 52 - Identical saved request retry returns its existing receipt instead of a second request
+ok 69 - Identical saved request retry returns its existing receipt instead of a second request
   ---
-  duration_ms: 2.354478
+  duration_ms: 0.714643
   type: 'test'
   ...
 # Subtest: A school-wide conflict stops a stale-tab request before any Jotform sync
-ok 53 - A school-wide conflict stops a stale-tab request before any Jotform sync
+ok 70 - A school-wide conflict stops a stale-tab request before any Jotform sync
   ---
-  duration_ms: 1.032347
+  duration_ms: 0.638388
   type: 'test'
   ...
 # Subtest: Jotform synchronization outage does not undo a saved request or school lock
-ok 54 - Jotform synchronization outage does not undo a saved request or school lock
+ok 71 - Jotform synchronization outage does not undo a saved request or school lock
   ---
-  duration_ms: 1.347746
+  duration_ms: 0.708023
   type: 'test'
   ...
 # Subtest: Fresh setup and migration include atomic school-wide locking and preserve history
-ok 55 - Fresh setup and migration include atomic school-wide locking and preserve history
+ok 72 - Fresh setup and migration include atomic school-wide locking and preserve history
   ---
-  duration_ms: 0.838178
+  duration_ms: 0.490412
   type: 'test'
   ...
 # Subtest: The blocked UI has no refresh-availability workaround or unlocked next step
-ok 56 - The blocked UI has no refresh-availability workaround or unlocked next step
+ok 73 - The blocked UI has no refresh-availability workaround or unlocked next step
   ---
-  duration_ms: 0.619723
+  duration_ms: 0.384132
   type: 'test'
   ...
 # Subtest: Legacy Jotform records for multiple sessions are consolidated into one school request
-ok 57 - Legacy Jotform records for multiple sessions are consolidated into one school request
+ok 74 - Legacy Jotform records for multiple sessions are consolidated into one school request
   ---
-  duration_ms: 12.061127
+  duration_ms: 8.261206
   type: 'test'
   ...
-1..57
-# tests 57
+1..74
+# tests 74
 # suites 0
-# pass 57
+# pass 74
 # fail 0
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 130.250367
+# duration_ms 153.550752

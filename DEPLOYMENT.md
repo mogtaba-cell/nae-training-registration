@@ -1,3 +1,5 @@
+> Current bilingual release: read UPDATE-BILINGUAL.md first. Existing current databases need no SQL migration. This deployment does not use school access codes; leave SCHOOL_ACCESS_SECRET unset and skip the access-code setup section below.
+
 # Deploy the request-workflow update from VS Code
 
 **Use the whole new project. This release requires a one-time database setup before it can accept requests. Your Jotform form ID remains unchanged.**

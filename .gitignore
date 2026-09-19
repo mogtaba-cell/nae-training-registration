@@ -1,15 +1,8 @@
-@"
 node_modules/
 .vercel/
 .env
-.env.local
-.env.production
-.env.development
-.env.*.local
-
+.env.*
+!.env.example
+test-results/
+playwright-report/
 data/access-codes.csv
-
-npm-debug.log*
-.DS_Store
-Thumbs.db
-"@ | Set-Content .gitignore

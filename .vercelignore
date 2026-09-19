@@ -1,9 +1,8 @@
 .git
 node_modules
 .env
-.env.local
-.env.production
-.env.preview
+.env.*
+!.env.example
 tests
 screenshots
 data/access-codes.csv

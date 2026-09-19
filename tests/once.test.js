@@ -16,7 +16,7 @@ function schoolRequest(){
   const session=domain.data.sessions.find(x=>x.pathway==='Oral History');
   const teacher=s.teachers.find(x=>x.esis);
   return {requestId:crypto.randomUUID(),schoolEsis:s.schoolEsis,pathways:s.registeredPathways,pathwaysReviewed:true,
-    coordinator:{action:'verified'},selections:[{sessionId:session.id,teacherId:teacher.id}],addedTeachers:[],teacherIdentifiers:{},acknowledgement:true};
+    coordinator:{action:'verified'},selections:[{sessionId:session.id,teacherId:teacher.id}],addedTeachers:[],teacherIdentifiers:{},acknowledgement:true,language:'en',acknowledgements:{onceOnly:true,emailConfirmation:true}};
 }
 
 test('School directory shows Already submitted flags without contacts and is never cached',async t=>{
@@ -26,7 +26,7 @@ test('School directory shows Already submitted flags without contacts and is nev
   assert.equal(res.statusCode,200);assert.equal(res.headers['cache-control'],'no-store');
   assert.equal(res.value.find(x=>x.schoolEsis===school.schoolEsis).alreadySubmitted,true);
   assert.equal(res.value.filter(x=>x.alreadySubmitted).length,1);
-  for(const row of res.value)assert.deepEqual(Object.keys(row).sort(),['alreadySubmitted','region','schoolEsis','schoolName']);
+  for(const row of res.value)assert.deepEqual(Object.keys(row).sort(),['alreadySubmitted','region','schoolEsis','schoolName','schoolNameArabic']);
 });
 
 test('Selecting a submitted school returns a blocker, not its roster or coordinator',async t=>{

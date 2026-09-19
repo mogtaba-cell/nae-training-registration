@@ -1,8 +1,8 @@
 {
   "name": "nae-training-registration-requests",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "private": true,
-  "description": "School workshop requests with one submission per school, Jotform reporting and atomic session selections",
+  "description": "Bilingual English/Arabic workshop requests, one submission per school and two required acknowledgements",
   "engines": {
     "node": "22.x"
   },

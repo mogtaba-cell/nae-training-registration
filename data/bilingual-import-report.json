@@ -1,0 +1,12 @@
+{
+  "source": "schools (9).csv",
+  "csvRecords": 287,
+  "matchedExisting": 286,
+  "addedSchoolIds": [
+    "2114AD"
+  ],
+  "totalSchools": 287,
+  "unmatchedExisting": [],
+  "teacherRecordsUnchanged": 825,
+  "note": "Arabic names matched by eSIS. Existing coordinators, teachers, pathways and routing are preserved. New schools start without a coordinator, pathways or nominees."
+}

@@ -16,7 +16,7 @@ with sync_playwright() as p:
     safe_schools={}
     for school in data['schools']:
         safe_schools[school['schoolEsis']]={
-            'schoolEsis':school['schoolEsis'],'schoolName':school['schoolName'],'region':school['region'],
+            'schoolEsis':school['schoolEsis'],'schoolName':school['schoolName'],'schoolNameArabic':school.get('schoolNameArabic',''),'region':school['region'],
             'registeredPathways':school['registeredPathways'],
             'coordinator':{'nameEnglish':school['coordinator']['nameEnglish'],'listed':bool(school['coordinator']['nameEnglish']),'verified':school['coordinator']['verified']},
             'teachers':[{k:t[k] for k in ['id','nameEnglish','nameArabic','esis','pathways']} for t in school['teachers']],
@@ -34,7 +34,7 @@ with sync_playwright() as p:
           window.fetch=async (url, options={})=>{
             let value;
             if(url==='/api/config') value=fixture.config;
-            else if(url==='/api/schools')value=Object.values(fixture.schools).map(s=>({schoolEsis:s.schoolEsis,schoolName:s.schoolName,region:s.region}));
+            else if(url==='/api/schools')value=Object.values(fixture.schools).map(s=>({schoolEsis:s.schoolEsis,schoolName:s.schoolName,schoolNameArabic:s.schoolNameArabic,region:s.region}));
             else if(url.startsWith('/api/school?'))value=fixture.schools[new URL(url,'https://test.invalid').searchParams.get('esis')];
             else if(url==='/api/register'){
               const b=JSON.parse(options.body);window.__submitted.push(b);
@@ -43,6 +43,7 @@ with sync_playwright() as p:
             return {ok:true,status:200,json:async()=>structuredClone(value)};
           };
         }""",fixture)
+        page.add_script_tag(content=(root/'public/i18n.js').read_text())
         page.add_script_tag(content=(root/'public/app.js').read_text())
     def select(esis):
         load();page.locator('#school-search').fill(esis)
@@ -83,12 +84,12 @@ with sync_playwright() as p:
     assert page.locator('.review-session').count()==3
     assert page.locator('body').get_by_text('test@example.invalid',exact=True).count()==0
     page.screenshot(path=str(root/'screenshots/03-review-request.png'),full_page=True)
-    page.locator('#request-ack').check();page.locator('#submit-request').click()
+    page.locator('#ack-once').check();page.locator('#ack-email').check();page.locator('#submit-request').click()
     expect(page.get_by_role('heading',name='Your request has been received')).to_be_visible()
     requests=page.evaluate('window.__submitted')
     assert len(requests)==1 and len(requests[0]['selections'])==3
     assert page.get_by_role('button',name='Register another school').count()==0
-    assert page.get_by_text('Attendance is not confirmed yet.',exact=True).count()==1
+    assert page.get_by_text('Please note: Workshop attendance is not confirmed until you receive the confirmation email.',exact=True).count()==1
     page.screenshot(path=str(root/'screenshots/04-request-received.png'),full_page=True)
     summary.append('Desktop request journey with safe API fixtures and simulated submission: passed')
     # Unverified coordinator must not have the Verified badge.
