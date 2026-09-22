@@ -6,7 +6,8 @@ const all=domain.officialPathways;
 const ad=data.schools.find(s=>s.region==='Abu Dhabi'&&s.coordinator.verified&&s.teachers.length>=2);
 const unverified=data.schools.find(s=>s.coordinator.nameEnglish&&!s.coordinator.verified&&s.teachers.length);
 const noCoordinator=data.schools.find(s=>!s.coordinator.nameEnglish);
-const oral=data.sessions.filter(s=>s.pathway==='Oral History');
+const oral=data.sessions.filter(s=>s.pathway==='Oral History'&&s.registrationOpen!==false);
+const closedOral=data.sessions.find(s=>s.id==='ORAL-HISTORY-ABU-DHABI-20260924');
 const newCoordinator={nameEnglish:'Test Coordinator',nameArabic:'Test Arabic Name',esis:'PASS-TEST-C',position:'Coordinator',emiratesId:'784-2000-0000000-0',workEmail:'coordinator@example.invalid',primaryEmail:'primary@example.invalid',mobile:'0500000000'};
 const newTeacher={id:'A-test',nameEnglish:'Test Teacher',nameArabic:'Test Arabic Name',esis:'PASS-TEST-1',position:'Teacher',workEmail:'teacher@example.invalid',mobile:'0500000000'};
 function body(school=ad){return {requestId:crypto.randomUUID(),schoolEsis:school.schoolEsis,pathways:[...all],pathwaysReviewed:true,coordinator:{action:school.coordinator.verified?'verified':school.coordinator.nameEnglish?'confirm':'add',...(!school.coordinator.nameEnglish?newCoordinator:{})},addedTeachers:[],teacherIdentifiers:{},selections:[{sessionId:oral[0].id,teacherId:school.teachers[0]?.id||newTeacher.id}],acknowledgement:true,language:'en',acknowledgements:{onceOnly:true,emailConfirmation:true}};}
@@ -21,21 +22,20 @@ test('Private contacts and identity numbers never occur in public school fields'
 });
 test('Public session data excludes venue',()=>{for(const s of data.sessions)assert.equal('venue' in domain.publicSession(s),false);});
 test('Abu Dhabi regional routing; no Applied Arts training session invented',()=>{
- const sessions=eligibleSessions(ad,all);assert.equal(sessions.length,6);assert.ok(sessions.every(s=>s.region==='Abu Dhabi'));assert.ok(!sessions.some(s=>s.pathway==='Applied Arts'));
+ const sessions=eligibleSessions(ad,all);assert.equal(sessions.length,5);assert.ok(sessions.every(s=>s.region==='Abu Dhabi'));assert.ok(!sessions.some(s=>s.pathway==='Applied Arts'));
 });
 test('Al Ain arts route locally; Performing Arts and Oral History route to Abu Dhabi',()=>{
- const school=data.schools.find(s=>s.region==='Al Ain');const sessions=eligibleSessions(school,all);assert.equal(sessions.length,6);
+ const school=data.schools.find(s=>s.region==='Al Ain');const sessions=eligibleSessions(school,all);assert.equal(sessions.length,5);
  for(const s of sessions)assert.equal(s.region,['Oral History','Performing Arts'].includes(s.pathway)?'Abu Dhabi':'Al Ain');
 });
-test('Al Dhafra can access both regional options before choosing one',()=>assert.equal(eligibleSessions(data.schools.find(s=>s.region==='Al Dhafra'),all).length,9));
+test('Al Dhafra can access both regional options before choosing one',()=>assert.equal(eligibleSessions(data.schools.find(s=>s.region==='Al Dhafra'),all).length,8));
 test('Al Dhafra cannot request both Abu Dhabi and Al Ain for the same pathway',()=>{
  const school=data.schools.find(s=>s.region==='Al Dhafra');const b=body(school);const pair=data.sessions.filter(s=>s.pathway==='Visual Arts');
  b.addedTeachers=[newTeacher];b.selections=pair.map(s=>({sessionId:s.id,teacherId:newTeacher.id}));
  assert.throws(()=>validateRequest(b),/either Abu Dhabi or Al Ain/);
 });
-test('Schools without pathways still have both Oral History dates',()=>assert.deepEqual(eligibleSessions(ad,[]).map(s=>s.id),oral.map(s=>s.id)));
-test('Same teacher may request both Oral History sessions',()=>{const b=body();b.selections.push({sessionId:oral[1].id,teacherId:ad.teachers[0].id});assert.equal(validateRequest(b).payload.records.length,2);});
-test('Different teachers may request the two different Oral History dates',()=>{const b=body();b.selections.push({sessionId:oral[1].id,teacherId:ad.teachers[1].id});assert.equal(validateRequest(b).payload.records.length,2);});
+test('Schools without pathways can request only the open Oral History session',()=>assert.deepEqual(eligibleSessions(ad,[]).map(s=>s.id),oral.map(s=>s.id)));
+test('24 September Oral History remains in historical schedule data but is closed for new requests',()=>{assert.equal(closedOral.registrationOpen,false);assert.ok(!eligibleSessions(ad,all).some(s=>s.id===closedOral.id));const b=body();b.selections=[{sessionId:closedOral.id,teacherId:ad.teachers[0].id}];assert.throws(()=>validateRequest(b),/pathways or region/);});
 test('Two different teachers cannot request the same Oral History session',()=>{const b=body();b.selections.push({sessionId:oral[0].id,teacherId:ad.teachers[1].id});assert.throws(()=>validateRequest(b),/Only one teacher/);});
 test('Repeated identical session selection is rejected, not silently deduplicated',()=>{const b=body();b.selections.push({...b.selections[0]});assert.throws(()=>validateRequest(b),/Only one teacher/);});
 test('Teacher/session pairs for a wrong region are rejected server-side',()=>{const b=body();b.selections=[{sessionId:data.sessions.find(s=>s.pathway==='Visual Arts'&&s.region==='Al Ain').id,teacherId:ad.teachers[0].id}];assert.throws(()=>validateRequest(b),/pathways or region/);});
@@ -63,8 +63,8 @@ test('Missing existing eSIS is requested rather than inventing an identifier',()
 });
 test('Idempotent input produces the same hash and request-record IDs',()=>{const b=body();const a=validateRequest(b),c=validateRequest(b);assert.equal(a.hash,c.hash);assert.equal(a.payload.records[0].id,c.payload.records[0].id);});
 test('Changing a request changes its hash',()=>{const b=body();const a=validateRequest(b);b.pathways=[];assert.notEqual(a.hash,validateRequest(b).hash);});
-test('Same additional teacher is reused across multiple distinct sessions',()=>{const b=body();b.addedTeachers=[newTeacher];b.selections=oral.map(s=>({sessionId:s.id,teacherId:newTeacher.id}));assert.equal(validateRequest(b).payload.records.length,2);});
-test('Duplicate additional teacher eSIS is rejected',()=>{const b=body();b.addedTeachers=[newTeacher,{...newTeacher,id:'A-second'}];b.selections=oral.map((s,i)=>({sessionId:s.id,teacherId:b.addedTeachers[i].id}));assert.throws(()=>validateRequest(b),/entered more than once/);});
+test('Same additional teacher is reused across multiple distinct sessions',()=>{const b=body();const sessions=eligibleSessions(ad,all).slice(0,2);b.addedTeachers=[newTeacher];b.selections=sessions.map(s=>({sessionId:s.id,teacherId:newTeacher.id}));assert.equal(validateRequest(b).payload.records.length,2);});
+test('Duplicate additional teacher eSIS is rejected',()=>{const b=body();const sessions=eligibleSessions(ad,all).slice(0,2);b.addedTeachers=[newTeacher,{...newTeacher,id:'A-second'}];b.selections=sessions.map((s,i)=>({sessionId:s.id,teacherId:b.addedTeachers[i].id}));assert.throws(()=>validateRequest(b),/entered more than once/);});
 test('Adding a known Applied-only teacher cannot bypass their workshop eligibility',()=>{
  const school=data.schools.find(s=>s.teachers.some(t=>t.pathways.length===1&&t.pathways[0]==='Applied Arts'));
  const teacher=school.teachers.find(t=>t.pathways.length===1&&t.pathways[0]==='Applied Arts');

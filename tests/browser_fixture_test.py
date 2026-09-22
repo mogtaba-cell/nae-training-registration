@@ -21,7 +21,7 @@ with sync_playwright() as p:
             'coordinator':{'nameEnglish':school['coordinator']['nameEnglish'],'listed':bool(school['coordinator']['nameEnglish']),'verified':school['coordinator']['verified']},
             'teachers':[{k:t[k] for k in ['id','nameEnglish','nameArabic','esis','pathways']} for t in school['teachers']],
             'bookedSessionIds':[],'storageConfigured':True,'previewOnly':False}
-    fixture={'schools':safe_schools,'config':{'version':2,'sessions':[{k:v for k,v in x.items() if k!='venue'} for x in data['sessions']],
+    fixture={'schools':safe_schools,'config':{'version':2,'sessions':[{k:v for k,v in x.items() if k!='venue'} for x in data['sessions'] if x.get('registrationOpen', True)],
         'officialPathways':data['officialPathways'],'requireAccessCode':False,'storageConfigured':True,'previewOnly':False}}
     html=(root/'public/index.html').read_text()
     html=re.sub(r'<link[^>]*>|<script[^>]*></script>','',html)
@@ -57,17 +57,18 @@ with sync_playwright() as p:
     page.screenshot(path=str(root/'screenshots/01-school-details.png'),full_page=True)
     page.locator('#school-next').click()
     expect(page.locator('#session-list')).to_be_visible()
-    assert page.locator('.session-card').count()==6
+    assert page.locator('.session-card').count()==5
     assert page.locator('#session-list').get_by_text('Applied Arts',exact=True).count()==0
     for venue in [s['venue'] for s in data['sessions']]:
         assert venue not in page.locator('body').inner_text()
     oral=page.locator('.session-card').filter(has=page.get_by_role('heading',name='Oral History',exact=True))
-    first=oral.nth(0);second=oral.nth(1)
+    first=oral.nth(0)
     first.locator('input[type=radio]').nth(0).check()
     first.locator('input[type=radio]').nth(1).check()
     assert first.locator('input[type=radio]:checked').count()==1
     t_id=first.locator('input[type=radio]:checked').get_attribute('value')
-    second.locator('input[value="'+t_id+'"]').check()
+    performing=page.locator('.session-card').filter(has=page.get_by_role('heading',name='Performing Arts - Drama',exact=True))
+    performing.locator('input[type=radio]').first.check()
     assert page.locator('#selection-count').inner_text().startswith('2')
     page.screenshot(path=str(root/'screenshots/02-session-selection.png'),full_page=True)
     # Add new teacher inline and reuse that teacher for a second session.
@@ -116,9 +117,9 @@ with sync_playwright() as p:
     page.locator('#pathways-reviewed').check()
     if not school['coordinator']['verified']:page.locator('[name=coordinator-action][value=confirm]').check()
     page.locator('#school-next').click()
-    assert page.locator('.session-card').count()==2
-    assert page.locator('.empty-session').count()==2
-    summary.append('Empty school: both Oral History dates and add-teacher controls: passed')
+    assert page.locator('.session-card').count()==1
+    assert page.locator('.empty-session').count()==1
+    summary.append('Empty school: open Oral History session and add-teacher control: passed')
     # Al Dhafra chooses one region per regional pathway; both regional session cards are never shown at once.
     school=next(s for s in data['schools'] if s['region']=='Al Dhafra' and s['coordinator']['nameEnglish'])
     select(school['schoolEsis'])
@@ -127,7 +128,7 @@ with sync_playwright() as p:
     if not school['coordinator']['verified']:page.locator('[name=coordinator-action][value=confirm]').check()
     page.locator('#school-next').click()
     assert page.locator('.regional-pathway-card').count()==3
-    assert page.locator('.session-card').count()==6  # 2 Oral History + Performing + 3 regional pathway cards
+    assert page.locator('.session-card').count()==5  # 1 open Oral History + Performing + 3 regional pathway cards
     visual=page.locator('.regional-pathway-card').filter(has=page.get_by_role('heading',name='Visual Arts',exact=True))
     assert visual.locator('.region-option').count()==2
     assert visual.locator('.teacher-row').count()==0

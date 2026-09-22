@@ -21,3 +21,18 @@ test('published workshop session times match the September 22 schedule update',(
     assert.equal(session.time,time,`${id} time`);
   }
 });
+
+test('24 September Oral History is retained for history but closed to new registration',()=>{
+  const session=data.sessions.find(s=>s.id==='ORAL-HISTORY-ABU-DHABI-20260924');
+  assert.ok(session);
+  assert.equal(session.registrationOpen,false);
+});
+
+test('public config hides the closed 24 September Oral History session',()=>{
+  const handler=require('../api/config');
+  const res={headers:{},setHeader(k,v){this.headers[k]=v;},status(n){this.statusCode=n;return this;},json(v){this.value=v;return this;}};
+  handler({method:'GET'},res);
+  assert.equal(res.statusCode,200);
+  assert.ok(!res.value.sessions.some(s=>s.id==='ORAL-HISTORY-ABU-DHABI-20260924'));
+  assert.ok(res.value.sessions.some(s=>s.id==='ORAL-HISTORY-ABU-DHABI-20261001'));
+});

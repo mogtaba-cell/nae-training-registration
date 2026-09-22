@@ -17911,7 +17911,8 @@
       "date": "2026-09-24",
       "region": "Abu Dhabi",
       "venue": "Abu Dhabi - House of Artesians",
-      "time": "9:00 AM - 3:00 PM"
+      "time": "9:00 AM - 3:00 PM",
+      "registrationOpen": false
     },
     {
       "id": "LITERARY-ARTS-ABU-DHABI-20260928",

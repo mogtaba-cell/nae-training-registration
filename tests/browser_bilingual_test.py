@@ -8,7 +8,7 @@ from playwright.sync_api import sync_playwright, expect
 ROOT=Path(__file__).resolve().parents[1]
 summary=[]
 data=json.loads((ROOT/'data/registration-data.json').read_text(encoding='utf-8'))
-sessions=[{k:v for k,v in s.items() if k!='venue'} for s in data['sessions']]
+sessions=[{k:v for k,v in s.items() if k!='venue'} for s in data['sessions'] if s.get('registrationOpen', True)]
 paths=data['officialPathways']
 oral=[s for s in sessions if s['pathway']=='Oral History']
 visual_ad=next(s for s in sessions if s['pathway']=='Visual Arts' and s['region']=='Abu Dhabi')
@@ -86,7 +86,7 @@ with sync_playwright() as p:
     screenshot('01-school-arabic.png');summary.append('English/Arabic toggle, top-right placement, Arabic-name search, keyboard selection and preserved pathway review: passed')
     nextschool()
     card=page.locator('#card-'+oral[0]['id']);card.locator('[data-select-session]').first.check()
-    card2=page.locator('#card-'+oral[1]['id']);card2.locator('[data-select-session]').nth(1).check()
+    performing=next(s for s in sessions if s['pathway']=='Performing Arts');card2=page.locator('#card-'+performing['id']);card2.locator('[data-select-session]').nth(1).check()
     toggle();expect(card.locator('[data-select-session]').first).to_be_checked();toggle()
     visual=page.locator('#card-'+visual_ad['id']);visual.locator('[data-add-session]').click()
     page.locator('#teacher-nameEnglish').fill('Example Added Teacher');page.locator('#teacher-nameArabic').fill('المعلّم المضاف التجريبي')
@@ -128,7 +128,7 @@ with sync_playwright() as p:
     expect(v.locator('[data-region-pathway][value="Abu Dhabi"]')).to_be_checked();assert v.locator('[data-select-session]:checked').count()==1
     toggle();v.locator('[data-region-pathway][value="Al Ain"]').check();assert v.locator('[data-select-session]:checked').count()==0
     v.locator('[data-select-session]').first.check();assert v.locator('[data-region-pathway]:checked').count()==1
-    page.locator('#card-'+oral[0]['id']).locator('[data-select-session]').first.check();page.locator('#card-'+oral[1]['id']).locator('[data-select-session]').first.check()
+    page.locator('#card-'+oral[0]['id']).locator('[data-select-session]').first.check();performing=next(s for s in sessions if s['pathway']=='Performing Arts');page.locator('#card-'+performing['id']).locator('[data-select-session]').first.check()
     page.locator('#sessions-next').click();page.locator('#ack-once').check();page.locator('#ack-email').check()
     server['fail_once']=True;page.locator('#submit-request').click();expect(page.locator('#submit-error')).to_be_visible()
     before=server['attempts'][-1];toggle();page.locator('#submit-request').click();expect(page.get_by_role('heading',name='Your request has been received')).to_be_visible()

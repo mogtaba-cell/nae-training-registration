@@ -13,7 +13,7 @@ function stub(t,object,key,value){const original=object[key];object[key]=value;t
 function env(t,key,value){const prior=process.env[key];if(value===undefined)delete process.env[key];else process.env[key]=value;t.after(()=>{if(prior===undefined)delete process.env[key];else process.env[key]=prior;});}
 function schoolRequest(){
   const s=domain.data.schools.find(x=>x.coordinator.verified && x.teachers.some(t=>t.esis));
-  const session=domain.data.sessions.find(x=>x.pathway==='Oral History');
+  const session=domain.data.sessions.find(x=>x.pathway==='Oral History'&&x.registrationOpen!==false);
   const teacher=s.teachers.find(x=>x.esis);
   return {requestId:crypto.randomUUID(),schoolEsis:s.schoolEsis,pathways:s.registeredPathways,pathwaysReviewed:true,
     coordinator:{action:'verified'},selections:[{sessionId:session.id,teacherId:teacher.id}],addedTeachers:[],teacherIdentifiers:{},acknowledgement:true,language:'en',acknowledgements:{onceOnly:true,emailConfirmation:true}};

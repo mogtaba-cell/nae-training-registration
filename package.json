@@ -1,6 +1,6 @@
 {
   "name": "nae-training-registration-requests",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "private": true,
   "description": "Bilingual English/Arabic workshop requests, one submission per school and two required acknowledgements",
   "engines": {
