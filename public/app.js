@@ -19,6 +19,7 @@
   const region=r=>t(r);
   const dateFull=value=>I.dateFull(value,state.lang);
   const sessionTime=value=>I.time(value,state.lang);
+  const sessionPathway=s=>s?.pathway==='Performing Arts'?t('Performing Arts - Drama'):t(s?.pathway||'');
   const errorText=error=>I.error(error.message||'We could not complete this action. Check your connection and try again.',state.lang);
   const arrow=forward=>`<span aria-hidden="true">${(state.lang==='ar')!==!forward?'&#8592;':'&#8594;'}</span>`;
   const labels=['School details','Training registration','Review & submit'];
@@ -254,7 +255,7 @@
   }
   function sessionCard(s){
     const booked=(state.school.bookedSessionIds||[]).includes(s.id),selected=state.selections[s.id],date=dateParts(s.date);
-    return `<article class="session-card ${selected?'has-selection':''}" id="card-${esc(s.id)}"><div class="session-header"><div class="session-title"><div class="date-tile" aria-hidden="true"><strong>${date.day}</strong><small>${esc(date.month)}</small></div><div><h3>${h(s.pathway)}</h3><div class="session-meta"><span>${esc(region(s.region))}</span><span aria-hidden="true">&middot;</span><span>${esc(sessionTime(s.time))}</span></div><div class="session-date-full">${esc(dateFull(s.date))}</div></div></div><span class="badge ${selected?'selected':booked?'pending':''}">${h(booked?'Already requested':selected?'1 teacher selected':'Choose 1 teacher')}</span></div>${sessionBody(s)}</article>`;
+    return `<article class="session-card ${selected?'has-selection':''}" id="card-${esc(s.id)}"><div class="session-header"><div class="session-title"><div class="date-tile" aria-hidden="true"><strong>${date.day}</strong><small>${esc(date.month)}</small></div><div><h3>${esc(sessionPathway(s))}</h3><div class="session-meta"><span>${esc(region(s.region))}</span><span aria-hidden="true">&middot;</span><span>${esc(sessionTime(s.time))}</span></div><div class="session-date-full">${esc(dateFull(s.date))}</div></div></div><span class="badge ${selected?'selected':booked?'pending':''}">${h(booked?'Already requested':selected?'1 teacher selected':'Choose 1 teacher')}</span></div>${sessionBody(s)}</article>`;
   }
   function pathwayId(pathway){return pathway.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
   function dhafraPathwayCard(pathway){
@@ -320,7 +321,7 @@
   }
   function renderTeacherFields(){
     const s=getSession(activeSession);
-    $('#dialog-context').textContent=t(s.pathway)+' - '+region(s.region)+' - '+dateFull(s.date);
+    $('#dialog-context').textContent=sessionPathway(s)+' - '+region(s.region)+' - '+dateFull(s.date);
     const specs=[['nameEnglish','Teacher Full Name - English'],['nameArabic','Teacher Full Name - Arabic',{dir:'rtl'}],['esis','eSIS/PASS Number'],['position','Position/Designation'],['workEmail','Work Email',{type:'email'}],['mobile','Contact Mobile',{type:'tel',inputmode:'tel'}]];
     $('#teacher-fields').innerHTML=specs.map(([key,label,opts])=>field(key,label,state.teacherDraft[key]||'',{prefix:'teacher-',...opts})).join('');
     $$('#teacher-fields input').forEach(input=>input.oninput=()=>state.teacherDraft[input.name]=input.value);
@@ -344,7 +345,7 @@
     const card=document.getElementById('card-'+activeSession)||document.getElementById('pathway-card-'+pathwayId(session.pathway));card?.scrollIntoView({behavior:'smooth',block:'center'});
     toast(t('{name} is selected for this session.',{name:personName(teacher)}));
   };
-  function reviewRows(){return selectedEntries().map(({session:s,teacher:teacher})=>{const primary=personName(teacher),secondary=state.lang==='ar'?teacher.nameEnglish:teacher.nameArabic;return `<div class="review-session"><div><strong>${h(s.pathway)}</strong><small>${esc(dateFull(s.date))}</small><small>${esc(region(s.region))} &middot; ${esc(sessionTime(s.time))}</small></div><div class="review-person"><strong dir="auto">${esc(primary)}</strong>${secondary&&secondary!==primary?'<small dir="auto">'+esc(secondary)+'</small>':''}<small><bdi>eSIS/PASS ${esc(teacher.esis||state.teacherIdentifiers[teacher.id])}</bdi></small></div></div>`;}).join('');}
+  function reviewRows(){return selectedEntries().map(({session:s,teacher:teacher})=>{const primary=personName(teacher),secondary=state.lang==='ar'?teacher.nameEnglish:teacher.nameArabic;return `<div class="review-session"><div><strong>${esc(sessionPathway(s))}</strong><small>${esc(dateFull(s.date))}</small><small>${esc(region(s.region))} &middot; ${esc(sessionTime(s.time))}</small></div><div class="review-person"><strong dir="auto">${esc(primary)}</strong>${secondary&&secondary!==primary?'<small dir="auto">'+esc(secondary)+'</small>':''}<small><bdi>eSIS/PASS ${esc(teacher.esis||state.teacherIdentifiers[teacher.id])}</bdi></small></div></div>`;}).join('');}
   function timeRange(session){
     const parts=session.time.match(/(\d{1,2}):(\d{2})\s*(AM|PM)\s*-\s*(\d{1,2}):(\d{2})\s*(AM|PM)/i);if(!parts)return null;
     const minutes=(h,m,meridian)=>(Number(h)%12+(meridian.toUpperCase()==='PM'?12:0))*60+Number(m);
@@ -356,7 +357,7 @@
       const a=entries[i],b=entries[j];if(a.session.date!==b.session.date)continue;
       const idA=ident(a.teacher.esis||state.teacherIdentifiers[a.teacher.id]),idB=ident(b.teacher.esis||state.teacherIdentifiers[b.teacher.id]);
       const ra=timeRange(a.session),rb=timeRange(b.session);
-      if(idA&&idA===idB&&ra&&rb&&Math.max(ra[0],rb[0])<Math.min(ra[1],rb[1]))out.push(t('{name} has overlapping {first} and {second} requests on {date}.',{name:personName(a.teacher),first:t(a.session.pathway),second:t(b.session.pathway),date:dateFull(a.session.date)}));
+      if(idA&&idA===idB&&ra&&rb&&Math.max(ra[0],rb[0])<Math.min(ra[1],rb[1]))out.push(t('{name} has overlapping {first} and {second} requests on {date}.',{name:personName(a.teacher),first:sessionPathway(a.session),second:sessionPathway(b.session),date:dateFull(a.session.date)}));
     }
     return out;
   }

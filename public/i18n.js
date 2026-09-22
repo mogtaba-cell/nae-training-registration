@@ -28,6 +28,7 @@ const ar={
 'Send requests for review':'إرسال الطلبات للمراجعة',
 'Literary Arts':'الفنون الأدبية',
 'Performing Arts':'الفنون الأدائية',
+'Performing Arts - Drama':'الفنون الأدائية - دراما',
 'Visual Arts':'الفنون المرئية',
 'Digital Arts':'الفنون الرقمية',
 'Applied Arts':'الفنون التطبيقية',
