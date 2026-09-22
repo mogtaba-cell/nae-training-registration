@@ -17911,7 +17911,7 @@
       "date": "2026-09-24",
       "region": "Abu Dhabi",
       "venue": "Abu Dhabi - House of Artesians",
-      "time": "9:30 AM - 3:00 PM"
+      "time": "9:00 AM - 3:00 PM"
     },
     {
       "id": "LITERARY-ARTS-ABU-DHABI-20260928",
@@ -17919,7 +17919,7 @@
       "date": "2026-09-28",
       "region": "Abu Dhabi",
       "venue": "Abu Dhabi - ADEK 6th Floor",
-      "time": "9:30 AM - 3:30 PM"
+      "time": "9:00 AM - 3:30 PM"
     },
     {
       "id": "DIGITAL-ARTS-ABU-DHABI-20260929",
@@ -17927,7 +17927,7 @@
       "date": "2026-09-29",
       "region": "Abu Dhabi",
       "venue": "Abu Dhabi - Cultural Foundation",
-      "time": "9:30 AM - 3:00 PM"
+      "time": "9:00 AM - 3:00 PM"
     },
     {
       "id": "DIGITAL-ARTS-AL-AIN-20261001",
@@ -17935,7 +17935,7 @@
       "date": "2026-10-01",
       "region": "Al Ain",
       "venue": "Alain - Al Qattara Art Center",
-      "time": "9:30 AM - 3:00 PM"
+      "time": "9:00 AM - 3:00 PM"
     },
     {
       "id": "ORAL-HISTORY-ABU-DHABI-20261001",
@@ -17951,7 +17951,7 @@
       "date": "2026-10-02",
       "region": "Abu Dhabi",
       "venue": "Abu Dhabi -  ADEK 6th Floor",
-      "time": "9:30 AM - 3:00 PM"
+      "time": "9:00 AM - 12:00 PM"
     },
     {
       "id": "LITERARY-ARTS-AL-AIN-20261005",
@@ -17959,7 +17959,7 @@
       "date": "2026-10-05",
       "region": "Al Ain",
       "venue": "Alain - Al Qattara Art Center",
-      "time": "9:30 AM - 3:30 PM"
+      "time": "9:00 AM - 3:30 PM"
     },
     {
       "id": "VISUAL-ARTS-ABU-DHABI-20261006",
@@ -17975,7 +17975,7 @@
       "date": "2026-10-08",
       "region": "Al Ain",
       "venue": "Alain - Al Qattara Art Center",
-      "time": "9:30 AM - 2:00 PM"
+      "time": "9:00 AM - 2:00 PM"
     }
   ],
   "schoolNamesSource": "school-names-bilingual.csv (supplied as schools (9).csv)"
