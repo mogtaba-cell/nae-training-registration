@@ -17920,7 +17920,8 @@
       "date": "2026-09-28",
       "region": "Abu Dhabi",
       "venue": "Abu Dhabi - ADEK 6th Floor",
-      "time": "9:00 AM - 3:30 PM"
+      "time": "9:00 AM - 3:30 PM",
+      "sessionLanguage": "Arabic Only"
     },
     {
       "id": "DIGITAL-ARTS-ABU-DHABI-20260929",
@@ -17928,7 +17929,8 @@
       "date": "2026-09-29",
       "region": "Abu Dhabi",
       "venue": "Abu Dhabi - Cultural Foundation",
-      "time": "9:00 AM - 3:00 PM"
+      "time": "9:00 AM - 3:00 PM",
+      "sessionLanguage": "Bilingual"
     },
     {
       "id": "DIGITAL-ARTS-AL-AIN-20261001",
@@ -17936,7 +17938,8 @@
       "date": "2026-10-01",
       "region": "Al Ain",
       "venue": "Alain - Al Qattara Art Center",
-      "time": "9:00 AM - 3:00 PM"
+      "time": "9:00 AM - 3:00 PM",
+      "sessionLanguage": "Bilingual"
     },
     {
       "id": "ORAL-HISTORY-ABU-DHABI-20261001",
@@ -17944,7 +17947,8 @@
       "date": "2026-10-01",
       "region": "Abu Dhabi",
       "venue": "Abu Dhabi - ADEK (6th Floor)",
-      "time": "10:00 AM - 1:00 PM"
+      "time": "10:00 AM - 1:00 PM",
+      "sessionLanguage": "Arabic Only"
     },
     {
       "id": "PERFORMING-ARTS-ABU-DHABI-20261002",
@@ -17952,7 +17956,8 @@
       "date": "2026-10-02",
       "region": "Abu Dhabi",
       "venue": "Abu Dhabi -  ADEK 6th Floor",
-      "time": "9:00 AM - 12:00 PM"
+      "time": "9:00 AM - 12:00 PM",
+      "sessionLanguage": "Arabic Only"
     },
     {
       "id": "LITERARY-ARTS-AL-AIN-20261005",
@@ -17960,7 +17965,8 @@
       "date": "2026-10-05",
       "region": "Al Ain",
       "venue": "Alain - Al Qattara Art Center",
-      "time": "9:00 AM - 3:30 PM"
+      "time": "9:00 AM - 3:30 PM",
+      "sessionLanguage": "Arabic Only"
     },
     {
       "id": "VISUAL-ARTS-ABU-DHABI-20261006",
@@ -17968,7 +17974,8 @@
       "date": "2026-10-06",
       "region": "Abu Dhabi",
       "venue": "Abu Dhabi - Manrat Al Saadiyat",
-      "time": "11:30 AM - 4:00 PM"
+      "time": "11:30 AM - 4:00 PM",
+      "sessionLanguage": "Bilingual"
     },
     {
       "id": "VISUAL-ARTS-AL-AIN-20261008",
@@ -17976,7 +17983,8 @@
       "date": "2026-10-08",
       "region": "Al Ain",
       "venue": "Alain - Al Qattara Art Center",
-      "time": "9:00 AM - 2:00 PM"
+      "time": "9:00 AM - 2:00 PM",
+      "sessionLanguage": "Bilingual"
     }
   ],
   "schoolNamesSource": "school-names-bilingual.csv (supplied as schools (9).csv)"
