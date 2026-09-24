@@ -68,13 +68,16 @@ with sync_playwright() as p:
     assert first.locator('input[type=radio]:checked').count()==1
     t_id=first.locator('input[type=radio]:checked').get_attribute('value')
     performing=page.locator('.session-card').filter(has=page.get_by_role('heading',name='Performing Arts - Drama',exact=True))
-    performing.locator('input[type=radio]').first.check()
+    performing.locator('[data-add-session]').click();page.get_by_role('button',name='Select a teacher from record',exact=True).click();page.locator('[data-record-teacher]').first.click()
     assert page.locator('#selection-count').inner_text().startswith('2')
     page.screenshot(path=str(root/'screenshots/02-session-selection.png'),full_page=True)
     # Add new teacher inline and reuse that teacher for a second session.
     session=page.locator('.session-card').filter(has=page.get_by_role('heading',name='Visual Arts',exact=True))
     session.locator('[data-add-session]').click()
     expect(page.locator('#teacher-dialog')).to_be_visible()
+    expect(page.get_by_role('button',name='Select a teacher from record',exact=True)).to_be_visible()
+    expect(page.get_by_role('button',name='Add a new teacher',exact=True)).to_be_visible()
+    page.get_by_role('button',name='Add a new teacher',exact=True).click()
     assert page.locator('#teacher-form input[required]').count()==6
     values={'nameEnglish':'Test Workshop Teacher','nameArabic':'Test Arabic Name','esis':'PASS-UI-TEST','position':'Teacher','workEmail':'test@example.invalid','mobile':'0500000000'}
     for k,v in values.items():page.locator('#teacher-'+k).fill(v)
@@ -139,6 +142,18 @@ with sync_playwright() as p:
     assert 'Al Ain' in visual.locator('.session-meta').inner_text()
     assert visual.locator('[data-region-pathway="Visual Arts"]:checked').count()==1
     summary.append('Al Dhafra one-region-per-pathway flow: passed')
+    # A teacher on the school record can be reused for a session outside their original pathway.
+    select('9163')
+    page.locator('#pathways-reviewed').check()
+    if page.locator('[name=coordinator-action][value=confirm]').count():page.locator('[name=coordinator-action][value=confirm]').check()
+    page.locator('#school-next').click();expect(page.locator('#session-list')).to_be_visible()
+    digital=page.locator('.session-card').filter(has=page.get_by_role('heading',name='Digital Arts',exact=True))
+    digital.locator('[data-add-session]').click();page.screenshot(path=str(root/'screenshots/teacher-options.png'),full_page=True);page.get_by_role('button',name='Select a teacher from record',exact=True).click();page.screenshot(path=str(root/'screenshots/teacher-record-list.png'),full_page=True)
+    sehar=page.locator('[data-record-teacher]').filter(has_text='Sehar Faisal Faisal Maqsood')
+    expect(sehar).to_have_count(1);sehar.click();expect(page.locator('#teacher-dialog')).not_to_be_visible()
+    expect(digital.get_by_text('Sehar Faisal Faisal Maqsood',exact=True).first).to_be_visible()
+    assert digital.locator('input[type=radio]:checked').count()==1
+    summary.append('Existing school-record teacher can be reused across pathways through the two-option teacher flow: passed')
     # Mobile search, school view, and session layout.
     page.set_viewport_size({'width':390,'height':844});select('6009')
     page.locator('#pathways-reviewed').check();page.locator('#school-next').click()

@@ -89,6 +89,7 @@ with sync_playwright() as p:
     performing=next(s for s in sessions if s['pathway']=='Performing Arts');card2=page.locator('#card-'+performing['id']);card2.locator('[data-select-session]').nth(1).check()
     toggle();expect(card.locator('[data-select-session]').first).to_be_checked();toggle()
     visual=page.locator('#card-'+visual_ad['id']);visual.locator('[data-add-session]').click()
+    expect(page.locator('[data-teacher-source=record]')).to_be_visible();page.locator('[data-teacher-source=new]').click()
     page.locator('#teacher-nameEnglish').fill('Example Added Teacher');page.locator('#teacher-nameArabic').fill('المعلّم المضاف التجريبي')
     page.locator('#dialog-language-toggle').click()
     expect(page.locator('#teacher-nameEnglish')).to_have_value('Example Added Teacher');expect(page.locator('#teacher-nameArabic')).to_have_value('المعلّم المضاف التجريبي')

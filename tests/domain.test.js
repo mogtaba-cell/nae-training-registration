@@ -65,12 +65,23 @@ test('Idempotent input produces the same hash and request-record IDs',()=>{const
 test('Changing a request changes its hash',()=>{const b=body();const a=validateRequest(b);b.pathways=[];assert.notEqual(a.hash,validateRequest(b).hash);});
 test('Same additional teacher is reused across multiple distinct sessions',()=>{const b=body();const sessions=eligibleSessions(ad,all).slice(0,2);b.addedTeachers=[newTeacher];b.selections=sessions.map(s=>({sessionId:s.id,teacherId:newTeacher.id}));assert.equal(validateRequest(b).payload.records.length,2);});
 test('Duplicate additional teacher eSIS is rejected',()=>{const b=body();const sessions=eligibleSessions(ad,all).slice(0,2);b.addedTeachers=[newTeacher,{...newTeacher,id:'A-second'}];b.selections=sessions.map((s,i)=>({sessionId:s.id,teacherId:b.addedTeachers[i].id}));assert.throws(()=>validateRequest(b),/entered more than once/);});
-test('Adding a known Applied-only teacher cannot bypass their workshop eligibility',()=>{
- const school=data.schools.find(s=>s.teachers.some(t=>t.pathways.length===1&&t.pathways[0]==='Applied Arts'));
- const teacher=school.teachers.find(t=>t.pathways.length===1&&t.pathways[0]==='Applied Arts');
- const b=body(school);const session=eligibleSessions(school,all).find(s=>s.pathway==='Visual Arts');
- b.addedTeachers=[{...newTeacher,esis:teacher.esis,nameEnglish:teacher.nameEnglish}];b.selections=[{sessionId:session.id,teacherId:newTeacher.id}];
- assert.throws(()=>validateRequest(b),/not eligible for this workshop/);
+test('A listed teacher may be reused for a different pathway session',()=>{
+ const school=data.schools.find(s=>s.schoolEsis==='9163');
+ const teacher=school.teachers.find(t=>t.esis==='PASS145868');
+ const session=eligibleSessions(school,all).find(s=>s.pathway==='Digital Arts');
+ const b=body(school);b.selections=[{sessionId:session.id,teacherId:teacher.id}];
+ const record=validateRequest(b).payload.records[0];
+ assert.equal(record.teacher.esis,'PASS145868');assert.equal(record.registrationType,'Listed Teacher');assert.equal(record.pathway,'Digital Arts');
+});
+test('A school-record teacher cannot be duplicated through the add-new flow',()=>{
+ const school=data.schools.find(s=>s.teachers.some(t=>t.esis));const teacher=school.teachers.find(t=>t.esis);const b=body(school);
+ b.addedTeachers=[{...newTeacher,esis:teacher.esis,nameEnglish:teacher.nameEnglish}];b.selections=[{sessionId:oral[0].id,teacherId:newTeacher.id}];
+ assert.throws(()=>validateRequest(b),/already on the school record/);
+});
+test('Coordinator is available as a reusable school-record person when not already in the teacher roster',()=>{
+ const school=data.schools.find(s=>s.coordinator.nameEnglish&&!s.teachers.some(t=>t.nameEnglish===s.coordinator.nameEnglish));
+ const pub=publicSchool(school);const coord=pub.teachers.find(t=>t.isCoordinator);
+ assert.ok(coord);assert.equal(coord.nameEnglish,school.coordinator.nameEnglish);assert.equal(JSON.stringify(coord).includes('workEmail'),false);
 });
 test('A verified coordinator cannot be replaced through a forged change action',()=>{
  assert.throws(()=>resolveCoordinator(ad,{action:'change',...newCoordinator}),/already has a verified coordinator/);

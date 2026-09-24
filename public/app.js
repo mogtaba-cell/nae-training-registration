@@ -26,7 +26,7 @@
   const labels=['School details','Training registration','Review & submit'];
   const hints=['Pathways & coordinator','One teacher per pathway session','Send requests for review'];
   const dhafraRegionalPathways=['Literary Arts','Digital Arts','Visual Arts'];
-  let schoolLoadVersion=0,searchIndex=-1,searchMatches=[],activeSession=null,toastTimer;
+  let schoolLoadVersion=0,searchIndex=-1,searchMatches=[],activeSession=null,teacherDialogMode='choose',toastTimer;
   const main=$('#main');
   function announce(text){$('#live-message').textContent=text;}
   function toast(text){const node=$('#toast');node.textContent=text;node.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>node.hidden=true,4500);}
@@ -46,7 +46,7 @@
     if(state.ready)render(false);
     else if(state.loadFailure)renderLoadFailure(state.loadFailure);
     else if(!state.config)main.innerHTML=`<div class="panel loading"><span class="spinner" aria-hidden="true"></span>${h('Opening training registration...')}</div>`;
-    if(open)renderTeacherFields();
+    if(open)renderTeacherDialog();
     if(focused)document.getElementById(focused)?.focus({preventScroll:true});
     window.scrollTo({top:scroll,behavior:'instant'});
   }
@@ -73,12 +73,10 @@
   function teacherById(id){return state.school?.teachers.find(t=>t.id===id)||state.addedTeachers.find(t=>t.id===id);}
   function candidates(session){
     const listed=state.school.teachers.filter(t=>session.pathway==='Oral History'||t.pathways.includes(session.pathway));
-    const added=state.addedTeachers.filter(t=>{
-      if(listed.some(r=>r.esis&&ident(r.esis)===ident(t.esis)))return false;
-      const known=state.school.teachers.find(r=>r.esis&&ident(r.esis)===ident(t.esis));
-      return !known || session.pathway==='Oral History' || !known.pathways.includes('Applied Arts') || known.pathways.includes(session.pathway);
-    });
-    return [...listed,...added];
+    const people=[...listed,...state.addedTeachers];
+    const selected=teacherById(state.selections[session.id]);
+    if(selected&&!people.some(p=>p.id===selected.id))people.push(selected);
+    return people.filter((p,i,arr)=>arr.findIndex(x=>x.id===p.id)===i);
   }
   function selectedEntries(){return currentSessions().filter(s=>state.selections[s.id]).map(s=>({session:s,teacher:teacherById(state.selections[s.id])}));}
   function coordinator(){return ['add','change'].includes(state.coordinatorAction)?state.coordinatorDraft:state.school.coordinator;}
@@ -245,11 +243,11 @@
     const selected=state.selections[session.id]===teacher.id,added=teacher.id.startsWith('A-');
     const primary=personName(teacher),secondary=state.lang==='ar'?teacher.nameEnglish:teacher.nameArabic;
     const initials=primary.split(/\s+/).filter(Boolean).slice(0,2).map(p=>p[0]).join(state.lang==='ar'?' ':'').toUpperCase();
-    return `<div class="teacher-row"><div class="teacher-info"><span class="teacher-avatar" aria-hidden="true">${esc(initials)}</span><div><strong dir="auto">${esc(primary)}</strong>${secondary&&secondary!==primary?'<small dir="auto">'+esc(secondary)+'</small>':''}<small>${teacher.esis?'<bdi>eSIS/PASS '+esc(teacher.esis)+'</bdi>':h('eSIS/PASS required when selected')}${added?' &middot; '+h('Added teacher'):''}</small></div></div><label class="teacher-radio"><input type="radio" name="session-${esc(session.id)}" value="${esc(teacher.id)}" data-select-session="${esc(session.id)}" ${selected?'checked':''}><span>${h('Register for Training')}</span></label></div>`;
+    return `<div class="teacher-row"><div class="teacher-info"><span class="teacher-avatar" aria-hidden="true">${esc(initials)}</span><div><strong dir="auto">${esc(primary)}</strong>${secondary&&secondary!==primary?'<small dir="auto">'+esc(secondary)+'</small>':''}<small>${teacher.esis?'<bdi>eSIS/PASS '+esc(teacher.esis)+'</bdi>':h('eSIS/PASS required when selected')}${teacher.isCoordinator?' &middot; '+h('Coordinator'):''}${added?' &middot; '+h('Added teacher'):''}</small></div></div><label class="teacher-radio"><input type="radio" name="session-${esc(session.id)}" value="${esc(teacher.id)}" data-select-session="${esc(session.id)}" ${selected?'checked':''}><span>${h('Register for Training')}</span></label></div>`;
   }
   function sessionBody(s){
     const people=candidates(s),teacher=teacherById(state.selections[s.id]);
-    return `<div class="session-body">${people.length?people.map(p=>teacherRow(p,s)).join(''):'<p class="empty-session">'+h('No teacher is currently listed for this session. Add a teacher below to request a place.')+'</p>'}
+    return `<div class="session-body">${people.length?people.map(p=>teacherRow(p,s)).join(''):'<p class="empty-session">'+h('No teacher is currently listed for this session. Use the button below to select someone from the school record or add a new teacher.')+'</p>'}
       ${teacher&&!teacher.esis?`<div class="identifier-fix"><label class="field">${h('eSIS/PASS Number for {name}',{name:personName(teacher)})}<input type="text" dir="ltr" data-teacher-identifier="${esc(teacher.id)}" value="${esc(state.teacherIdentifiers[teacher.id]||'')}" placeholder="${h('Enter the missing eSIS/PASS number')}" required maxlength="80"></label></div>`:''}
       ${teacher?`<div class="selected-summary"><span>${h('Requested teacher:')} <strong dir="auto">${esc(personName(teacher))}</strong></span><button class="button text small" type="button" data-clear-session="${esc(s.id)}">${h('Clear')}</button></div>`:''}
       <button class="button session-add" type="button" data-add-session="${esc(s.id)}"><span aria-hidden="true">+</span> ${h('Register another teacher for this session')}</button></div>`;
@@ -320,32 +318,60 @@
     }
     return true;
   }
-  function renderTeacherFields(){
-    const s=getSession(activeSession);
+  function teacherRecordRow(teacher){
+    const primary=personName(teacher),secondary=state.lang==='ar'?teacher.nameEnglish:teacher.nameArabic;
+    const detail=[teacher.esis?'eSIS/PASS '+teacher.esis:'',teacher.isCoordinator?t('Coordinator'):'',teacher.id.startsWith('A-')?t('Added teacher'):''].filter(Boolean).join(' · ');
+    return `<button class="record-teacher-row" type="button" data-record-teacher="${esc(teacher.id)}"><span><strong dir="auto">${esc(primary)}</strong>${secondary&&secondary!==primary?'<small dir="auto">'+esc(secondary)+'</small>':''}<small>${esc(detail||t('On school record'))}</small></span><span class="record-select-label">${h('Select')}</span></button>`;
+  }
+  function recordPeople(){
+    return [...state.school.teachers].sort((a,b)=>personName(a).localeCompare(personName(b),state.lang==='ar'?'ar':'en'));
+  }
+  function setDialogMode(mode){teacherDialogMode=mode;renderTeacherDialog();}
+  function renderTeacherDialog(){
+    const s=getSession(activeSession);if(!s)return;
     $('#dialog-context').textContent=sessionPathway(s)+' - '+region(s.region)+' - '+dateFull(s.date)+' - '+t('Language')+': '+sessionLanguage(s);
+    const body=$('#teacher-dialog-body');
+    if(teacherDialogMode==='choose'){
+      body.innerHTML=`<p class="helper">${h('Choose an existing teacher from the school record or add a new teacher.')}</p><div class="teacher-source-options"><button class="teacher-source-card" type="button" data-teacher-source="record" aria-label="${h('Select a teacher from record')}"><strong>${h('Select a teacher from record')}</strong><span>${h('Choose anyone already listed for this school, including the coordinator. Their original pathway does not limit this session request.')}</span></button><button class="teacher-source-card" type="button" data-teacher-source="new" aria-label="${h('Add a new teacher')}"><strong>${h('Add a new teacher')}</strong><span>${h('Enter the details of a teacher who is not already on the school record.')}</span></button></div>`;
+      $$('[data-teacher-source]',body).forEach(button=>button.onclick=()=>setDialogMode(button.dataset.teacherSource));
+      return;
+    }
+    if(teacherDialogMode==='record'){
+      const people=recordPeople();
+      body.innerHTML=`<button class="button text small dialog-back" type="button" id="teacher-dialog-back">${arrow(false)} ${h('Back to teacher options')}</button><h3>${h('Select a teacher from record')}</h3><p class="helper">${h('Any person already listed for this school may be selected for this session, even if they were originally linked to another pathway.')}</p><div class="record-teacher-list">${people.length?people.map(teacherRecordRow).join(''):'<p class="empty-session">'+h('No teachers are currently on the school record. Add a new teacher instead.')+'</p>'}</div>${!people.length?'<button class="button primary" type="button" id="record-add-new">'+h('Add a new teacher')+'</button>':''}`;
+      $('#teacher-dialog-back').onclick=()=>setDialogMode('choose');
+      $$('#teacher-dialog-body [data-record-teacher]').forEach(button=>button.onclick=()=>{
+        const teacher=teacherById(button.dataset.recordTeacher);if(!teacher)return;
+        state.selections[activeSession]=teacher.id;const session=getSession(activeSession);$('#teacher-dialog').close();renderSessions();
+        const card=document.getElementById('card-'+activeSession)||document.getElementById('pathway-card-'+pathwayId(session.pathway));card?.scrollIntoView({behavior:'smooth',block:'center'});
+        toast(t('{name} is selected for this session.',{name:personName(teacher)}));
+      });
+      if($('#record-add-new'))$('#record-add-new').onclick=()=>setDialogMode('new');
+      return;
+    }
+    body.innerHTML=`<button class="button text small dialog-back" type="button" id="teacher-dialog-back">${arrow(false)} ${h('Back to teacher options')}</button><form id="teacher-form"><p class="helper">${h('This teacher can also be selected for other sessions. All fields below are required.')}</p><div id="teacher-fields" class="field-grid"></div><p class="form-error" id="teacher-error" role="alert" hidden></p><div class="dialog-actions"><button class="button secondary" type="button" id="cancel-teacher">${h('Cancel')}</button><button class="button primary" type="submit">${h('Save and select teacher')}</button></div></form>`;
+    $('#teacher-dialog-back').onclick=()=>setDialogMode('choose');$('#cancel-teacher').onclick=()=>$('#teacher-dialog').close();
     const specs=[['nameEnglish','Teacher Full Name - English'],['nameArabic','Teacher Full Name - Arabic',{dir:'rtl'}],['esis','eSIS/PASS Number'],['position','Position/Designation'],['workEmail','Work Email',{type:'email'}],['mobile','Contact Mobile',{type:'tel',inputmode:'tel'}]];
     $('#teacher-fields').innerHTML=specs.map(([key,label,opts])=>field(key,label,state.teacherDraft[key]||'',{prefix:'teacher-',...opts})).join('');
     $$('#teacher-fields input').forEach(input=>input.oninput=()=>state.teacherDraft[input.name]=input.value);
     bindValidity($('#teacher-form'));$('#teacher-error').hidden=true;
+    $('#teacher-form').onsubmit=e=>{
+      e.preventDefault();const form=e.currentTarget;if(!form.reportValidity())return;
+      const teacher=Object.fromEntries(new FormData(form));for(const key of Object.keys(teacher))teacher[key]=String(teacher[key]).trim();teacher.esis=ident(teacher.esis);teacher.mobile=I.digits(teacher.mobile);
+      if(!/^\d{7,15}$/.test(teacher.mobile.replace(/\D/g,''))){showError('#teacher-error',t('Please enter a valid contact mobile.'));return;}
+      const known=state.school.teachers.find(r=>r.esis&&ident(r.esis)===teacher.esis);
+      if(known){showError('#teacher-error',t('This teacher is already on the school record. Choose Select a teacher from record instead.'));return;}
+      let added=state.addedTeachers.find(a=>ident(a.esis)===teacher.esis);
+      if(added)Object.assign(added,teacher);else{added={...teacher,id:'A-'+crypto.randomUUID(),pathways:[],isCoordinator:false};state.addedTeachers.push(added);}
+      state.selections[activeSession]=added.id;const session=getSession(activeSession);$('#teacher-dialog').close();renderSessions();
+      const card=document.getElementById('card-'+activeSession)||document.getElementById('pathway-card-'+pathwayId(session.pathway));card?.scrollIntoView({behavior:'smooth',block:'center'});
+      toast(t('{name} is selected for this session.',{name:personName(teacher)}));
+    };
+    $('#teacher-nameEnglish')?.focus();
   }
-  function openTeacherDialog(sessionId){activeSession=sessionId;state.teacherDraft={};renderTeacherFields();$('#teacher-dialog').showModal();$('#teacher-nameEnglish').focus();}
-  $('#close-dialog').onclick=$('#cancel-teacher').onclick=()=>$('#teacher-dialog').close();
+  function openTeacherDialog(sessionId){activeSession=sessionId;state.teacherDraft={};teacherDialogMode='choose';renderTeacherDialog();$('#teacher-dialog').showModal();$('[data-teacher-source="record"]')?.focus();}
+  $('#close-dialog').onclick=()=>$('#teacher-dialog').close();
   $('#teacher-dialog').addEventListener('click',e=>{if(e.target===$('#teacher-dialog')){const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.target.close();}});
-  $('#teacher-form').onsubmit=e=>{
-    e.preventDefault();const form=e.currentTarget;if(!form.reportValidity())return;
-    const teacher=Object.fromEntries(new FormData(form));for(const key of Object.keys(teacher))teacher[key]=String(teacher[key]).trim();teacher.esis=ident(teacher.esis);teacher.mobile=I.digits(teacher.mobile);
-    if(!/^\d{7,15}$/.test(teacher.mobile.replace(/\D/g,''))){showError('#teacher-error',t('Please enter a valid contact mobile.'));return;}
-    const known=state.school.teachers.find(r=>r.esis&&ident(r.esis)===teacher.esis);
-    if(known&&norm(known.nameEnglish)!==norm(teacher.nameEnglish)){showError('#teacher-error',t('This eSIS/PASS number belongs to {name}. Please use the listed teacher or correct the number.',{name:personName(known)}));return;}
-    const session=getSession(activeSession);
-    if(known && session.pathway!=='Oral History' && known.pathways.includes('Applied Arts') && !known.pathways.includes(session.pathway)){showError('#teacher-error',t('This listed teacher is not eligible for this workshop. Please choose a different teacher.'));return;}
-    let added=state.addedTeachers.find(a=>ident(a.esis)===teacher.esis);
-    if(added)Object.assign(added,teacher);else{added={...teacher,id:'A-'+crypto.randomUUID(),pathways:known?.pathways||[]};state.addedTeachers.push(added);}
-    state.selections[activeSession]=known&&(session.pathway==='Oral History'||known.pathways.includes(session.pathway))?known.id:added.id;
-    $('#teacher-dialog').close();renderSessions();
-    const card=document.getElementById('card-'+activeSession)||document.getElementById('pathway-card-'+pathwayId(session.pathway));card?.scrollIntoView({behavior:'smooth',block:'center'});
-    toast(t('{name} is selected for this session.',{name:personName(teacher)}));
-  };
   function reviewRows(){return selectedEntries().map(({session:s,teacher:teacher})=>{const primary=personName(teacher),secondary=state.lang==='ar'?teacher.nameEnglish:teacher.nameArabic;return `<div class="review-session"><div><strong>${esc(sessionPathway(s))}</strong><small>${esc(dateFull(s.date))}</small><small>${esc(region(s.region))} &middot; ${esc(sessionTime(s.time))} &middot; ${h('Language')}: ${esc(sessionLanguage(s))}</small></div><div class="review-person"><strong dir="auto">${esc(primary)}</strong>${secondary&&secondary!==primary?'<small dir="auto">'+esc(secondary)+'</small>':''}<small><bdi>eSIS/PASS ${esc(teacher.esis||state.teacherIdentifiers[teacher.id])}</bdi></small></div></div>`;}).join('');}
   function timeRange(session){
     const parts=session.time.match(/(\d{1,2}):(\d{2})\s*(AM|PM)\s*-\s*(\d{1,2}):(\d{2})\s*(AM|PM)/i);if(!parts)return null;

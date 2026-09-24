@@ -1,4 +1,4 @@
-# NAE training registration requests - bilingual v2.2.0
+# NAE training registration requests - bilingual v2.2.3
 
 English / Arabic school workshop registration portal for Vercel, with Supabase
 persistence and Jotform reporting. Requests are reviewed before attendance is
@@ -13,8 +13,12 @@ Use the complete package, not just the HTML file.
 1. School details: instant English/Arabic/eSIS search; review or add school pathways;
    display a verified coordinator only when marked verified in the source; confirm,
    change or add a coordinator where necessary.
-2. Training registration: one teacher per chosen session, added-teacher form within
-   the session, and one region per regional pathway for Al Dhafra schools.
+2. Training registration: one teacher per chosen session. The same teacher may be
+   reused across different sessions. The “Register another teacher for this session”
+   action offers either a school-record teacher (including the coordinator) or a new
+   teacher. A school-record person may be requested for a session even when their
+   original nomination was under another pathway. Al Dhafra still chooses one region
+   per regional pathway.
 3. Review: two individually required acknowledgements, then one school-wide request.
 4. Receipt: Pending review, exact supplied bilingual message and printable summary.
 
@@ -42,7 +46,7 @@ for actual trial submissions. Testing against LIVE consumes a real school reques
 
 Fresh database setup: `DEPLOYMENT.md` and `database/setup.sql`.
 Old v2 to one-school-request upgrade only: `UPGRADE-ONCE.md`.
-Existing current database: **no SQL changes are needed for this bilingual update.**
+Existing current database: **no SQL changes are needed for this update.**
 
 ## Data and privacy
 
