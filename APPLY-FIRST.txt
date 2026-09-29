@@ -1,0 +1,20 @@
+IMPORTANT: GitHub is the source of truth.
+
+1. In your real project folder, pull main first:
+   git switch main
+   git pull origin main
+   git status
+
+2. Only when the working tree is clean, copy the contents of this patch folder over the project root.
+
+3. Test:
+   npm test
+
+4. Review and deploy:
+   git status
+   git diff --stat
+   git add .
+   git commit -m "Refresh teacher data and add schools"
+   git push origin main
+
+No Supabase migration and no Jotform form edit are required.

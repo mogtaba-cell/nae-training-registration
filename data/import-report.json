@@ -16,5 +16,9 @@
     }
   ],
   "teacherPathwaysNotInSchoolRegisteredList": 105,
-  "note": "School pathways come ONLY from the coordinator sheet. A teacher nomination does not silently register the school in a new pathway. Blank formatting rows are ignored. Missing teacher IDs are requested when selecting that teacher."
+  "note": "School pathways come ONLY from the coordinator sheet. A teacher nomination does not silently register the school in a new pathway. Blank formatting rows are ignored. Missing teacher IDs are requested when selecting that teacher.",
+  "historicalInitialImport": true,
+  "currentDataSupersededBy": "teacher-data-update-report.json",
+  "currentSchoolCount": 290,
+  "currentTeacherRosterRecords": 1093
 }

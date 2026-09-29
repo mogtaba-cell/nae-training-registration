@@ -8,5 +8,16 @@
   "totalSchools": 287,
   "unmatchedExisting": [],
   "teacherRecordsUnchanged": 825,
-  "note": "Arabic names matched by eSIS. Existing coordinators, teachers, pathways and routing are preserved. New schools start without a coordinator, pathways or nominees."
+  "note": "Historical Arabic-name import report. The later 29 September teacher-data refresh adds 6026, 9255 and 9105; see teacher-data-update-report.json. Arabic names are never invented, so 6026 and 9255 fall back to English.",
+  "currentTotalSchools": 290,
+  "laterAddedSchoolIds": [
+    "6026",
+    "9255",
+    "9105"
+  ],
+  "currentSchoolsWithoutArabicName": [
+    "6026",
+    "9255"
+  ],
+  "currentTeacherRecords": 1093
 }

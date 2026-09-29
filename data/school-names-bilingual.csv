@@ -62,14 +62,14 @@
 9111,International Jubilee Private School,مدرسة اليوبيل الدولية الخاصة,Private,خاصة,Abu Dhabi,أبوظبي
 9114,Rosary Private School,المدرسة الوردية الخاصة,Private,خاصة,Abu Dhabi,أبوظبي
 9116,Shaikh Khalifa Bin Zayed Bangladesh Islamia Private School,مدرسه الشيخ خليفه بن زايد البنغلاديشية الاسلامية الخاصة,Private,خاصة,Abu Dhabi,أبوظبي
-9117,The American International School,"المدرسة الأمريكية الدولية الخاصة، أبوظبي",Private,خاصة,Abu Dhabi,أبوظبي
+9117,The American International School,المدرسة الأمريكية الدولية الخاصة، أبوظبي,Private,خاصة,Abu Dhabi,أبوظبي
 9118,The Sheikh Zayed Private Academy For Girls,اكاديمية الشيخ زايد الخاصة للبنات,Private,خاصة,Abu Dhabi,أبوظبي
 9120,Sunrise English Private School,مدرسة الشروق الانجليزية الخاصة,Private,خاصة,Abu Dhabi,أبوظبي
 9121,International School Of Choueifat - Khalifa,مدرسة الشويفات الدولية- مدينة خليفة,Private,خاصة,Abu Dhabi,أبوظبي
 9122,Model Private School,المدرسة النموذجية الخاصة,Private,خاصة,Abu Dhabi,أبوظبي
 9123,Vision Private School,مدرسة الرؤية الخاصة,Private,خاصة,Abu Dhabi,أبوظبي
 9182,Al Dhabiania Private School,المدرسة الظبيانية الخاصة,Private,خاصة,Abu Dhabi,أبوظبي
-9190,The British International School,مدرسة بريطانيا الدولية ,Private,خاصة,Abu Dhabi,أبوظبي
+9190,The British International School,مدرسة بريطانيا الدولية,Private,خاصة,Abu Dhabi,أبوظبي
 9191,Muna British Academy,المنى أكاديمية بريطانية,Private,خاصة,Abu Dhabi,أبوظبي
 9192,Yasmina American School,مدرسة الياسمينة الأمريكية,Private,خاصة,Abu Dhabi,أبوظبي
 9198,Private International English School,المدرسة الانجليزية الدوليه الخاصه,Private,خاصة,Abu Dhabi,أبوظبي
@@ -279,10 +279,13 @@ ATS-AIN-B-HILI,Applied Technology Schools - Al Ain - Boys - Al Hili,مدارس �
 1565AD,Bayah School Girls,مدرسة بعيا بنات,Public,حكومية,Al Dhafra,الظفرة
 2017AD,Dalma School,مدرسة دلما,Public,حكومية,Al Dhafra,الظفرة
 2065AD,Ghayathi New School,مدرسة غياثي,Public,حكومية,Al Dhafra,الظفرة
-2066AD,Zayed City School - Al Dhfra, مدرسة مدينة زايد -الظفرة,Public,حكومية,Al Dhafra,الظفرة
+2066AD,Zayed City School - Al Dhfra,مدرسة مدينة زايد -الظفرة,Public,حكومية,Al Dhafra,الظفرة
 2069AD,Al Dhannah School Boys,مدرسة الظنة بنين,Public,حكومية,Al Dhafra,الظفرة
 2070AD,Al Dhannah School,مدرسة الظنة,Public,حكومية,Al Dhafra,الظفرة
 2071AD,Al Dhannah School Girls,مدرسة الظنة بنات,Public,حكومية,Al Dhafra,الظفرة
 2084AD,Al Marfaa School,مدرسة المرفأ,Public,حكومية,Al Dhafra,الظفرة
 2085AD,Al Marfa School Girls,مدرسة المرفأ بنات,Public,حكومية,Al Dhafra,الظفرة
-282AD,Qatr Al Nada School Girls, مدرسة قطر الندى بنات,Public,حكومية,Al Dhafra,الظفرة
+282AD,Qatr Al Nada School Girls,مدرسة قطر الندى بنات,Public,حكومية,Al Dhafra,الظفرة
+6026,Al Bayan School,,Charter,شراكات,Abu Dhabi,أبوظبي
+9105,Emirates National Schools - Mbz,مدرسة الإمارات الوطنية - محمد بن زايد,Private,خاصة,Abu Dhabi,أبوظبي
+9255,Maplewood Canadian International School,,Private,خاصة,Abu Dhabi,أبوظبي

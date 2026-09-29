@@ -1,12 +1,12 @@
-# NAE training registration requests - bilingual v2.2.3
+# NAE training registration requests - bilingual v2.2.4
 
 English / Arabic school workshop registration portal for Vercel, with Supabase
 persistence and Jotform reporting. Requests are reviewed before attendance is
 confirmed. No automatic acceptance emails are sent by this package.
 
-**Updating the existing project? Read `UPDATE-BILINGUAL.md` first.**
+**Updating the existing project? Read `TEACHER-DATA-UPDATE.md` first.**
 This release needs no new Supabase migration and no new Jotform questions.
-Use the complete package, not just the HTML file.
+The latest private roster comes from the supplied teacher/coordinator CSV.
 
 ## Current workflow
 
@@ -53,8 +53,10 @@ Existing current database: **no SQL changes are needed for this update.**
 `data/registration-data.json` is a private server dataset, not a public asset.
 Keep this repository private. Existing coordinator emails, phones and identity
 numbers are not returned by school lookup. School directories include only names,
-eSIS, region and submitted status. The Arabic school names came from the supplied
-`schools (9).csv`. See the bilingual import report for the one additional school.
+eSIS, region and submitted status. Most Arabic school names came from the supplied `schools (9).csv`. The 29 September
+teacher-data refresh adds two teacher-list schools without supplied Arabic school names,
+so Arabic safely falls back to English for those two. School `9105` uses the Arabic name
+provided with this update. See `TEACHER-DATA-UPDATE.md`.
 
 Only the language preference is saved in browser storage. Draft personal details
 stay in page memory. English canonical pathway/session IDs continue to be used in
@@ -66,12 +68,14 @@ Earlier records are not backfilled with consent they did not provide.
 
 ## Maintenance
 
-After rebuilding the base dataset with `scripts/import_workbook.py`, reapply the
-Arabic-name import:
+After rebuilding the base school dataset, reapply Arabic school names and then refresh
+the private teacher/coordinator roster:
 
 ```powershell
 python scripts/import_arabic_schools.py data/school-names-bilingual.csv
+python scripts/import_teacher_coordinator_csv.py "C:\path\to\allteachersschoolcoordinators.csv"
 ```
 
-This uses eSIS matching and preserves teacher/coordinator data. No secret files,
+The roster importer preserves existing registered school pathways, refreshes the attached
+teacher/person data, and retains the manually approved `9105` school. No secret files,
 Node modules or font files are distributed in this package.

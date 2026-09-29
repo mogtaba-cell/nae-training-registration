@@ -1,0 +1,74 @@
+{
+  "source": "allteachersschoolcoordinators (26)(1).csv",
+  "sourceSha256": "6673e34fa23c102b1856a350367719354218531147bb98e9d58b34b96a954fe6",
+  "sourceRows": 1095,
+  "usableRows": 1093,
+  "ignoredRows": [
+    {
+      "row": 1011,
+      "schoolEsis": "",
+      "schoolName": "",
+      "name": "Rasha Saeed Kadoura",
+      "reason": "blank/test/unsupported school metadata"
+    },
+    {
+      "row": 1076,
+      "schoolEsis": "Test",
+      "schoolName": "Test School",
+      "name": "",
+      "reason": "blank/test/unsupported school metadata"
+    }
+  ],
+  "sourceSchools": 284,
+  "existingSchoolCountBeforeRefresh": 287,
+  "teacherRecordsBeforeRefresh": 825,
+  "teacherRecordsAfterRefresh": 1093,
+  "coordinatorRowsApplied": 275,
+  "verifiedCoordinatorsPreserved": 59,
+  "newSchoolsFromCsv": [
+    "6026",
+    "9255"
+  ],
+  "manualSchoolsAddedOrRetained": [
+    "9105"
+  ],
+  "totalSchoolsAfterRefresh": 290,
+  "schoolsWithoutArabicName": [
+    "6026",
+    "9255"
+  ],
+  "missingTeacherIdsRequiringEntryOnSelection": [
+    {
+      "schoolEsis": "1705AD",
+      "teacherId": "T-55132a328bf6f56a7c90",
+      "teacherName": "Abeer Wahid Farid"
+    },
+    {
+      "schoolEsis": "9003",
+      "teacherId": "T-265b055cdfd18c274f8f",
+      "teacherName": "Michel Doumit"
+    },
+    {
+      "schoolEsis": "1564AD",
+      "teacherId": "T-92901999b39514a78d91",
+      "teacherName": "Tamer Mohammed Amer Khalil"
+    },
+    {
+      "schoolEsis": "2114AD",
+      "teacherId": "T-190539f794e6d0016d09",
+      "teacherName": "Aysha Eisa Aldarmaki"
+    },
+    {
+      "schoolEsis": "1396AD",
+      "teacherId": "T-f3ca0b9af928e3ee74e3",
+      "teacherName": "Fawzeya Qassim Aljalham"
+    },
+    {
+      "schoolEsis": "9159",
+      "teacherId": "T-5c363bae11ac745413d8",
+      "teacherName": "Zeinab Abdelaziz Faried Abdulmaguid"
+    }
+  ],
+  "unknownPathwayValuesIgnored": [],
+  "note": "Existing registered school pathways are preserved. Teacher roster membership and person details come from the supplied CSV. Session Pathway populates teacher session pathways; Specialization Pathway is retained separately for reporting. Valid new schools from the CSV start with no registered school pathways. Blank/test source rows are ignored."
+}

@@ -38,8 +38,9 @@ verification values, school regions and registered pathways were preserved.
 The supplied file also has one additional school, eSIS `2114AD` (AlDhabi School).
 It is included with its supplied Arabic name and region, no invented coordinator,
 no registered pathways, and no nominated teachers. The school can add its details
-through the existing workflow. Total searchable schools: 287.
-See `data/bilingual-import-report.json`.
+through the existing workflow. That bilingual release contained 287 schools. The later
+29 September teacher-data refresh increases the current searchable directory to 290; see
+`TEACHER-DATA-UPDATE.md` and `data/teacher-data-update-report.json`.
 
 ## Do I need to run another Supabase migration?
 
