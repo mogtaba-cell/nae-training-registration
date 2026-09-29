@@ -21,14 +21,15 @@ test('Private contacts and identity numbers never occur in public school fields'
  for(const s of data.schools){const value=publicSchool(s),json=JSON.stringify(value);for(const term of ['workEmail','primaryEmail','mobile','emiratesId','position'])assert.equal(json.includes('"'+term+'"'),false);assert.equal(value.coordinator.verified,s.coordinator.verified);}
 });
 test('Public session data excludes venue',()=>{for(const s of data.sessions)assert.equal('venue' in domain.publicSession(s),false);});
-test('Abu Dhabi regional routing; no Applied Arts training session invented',()=>{
- const sessions=eligibleSessions(ad,all);assert.equal(sessions.length,5);assert.ok(sessions.every(s=>s.region==='Abu Dhabi'));assert.ok(!sessions.some(s=>s.pathway==='Applied Arts'));
+test('Abu Dhabi regional routing excludes closed September sessions and invents no Applied Arts session',()=>{
+ const sessions=eligibleSessions(ad,all);assert.equal(sessions.length,3);assert.ok(sessions.every(s=>s.region==='Abu Dhabi'));assert.ok(!sessions.some(s=>s.pathway==='Applied Arts'));
+ assert.ok(!sessions.some(s=>['LITERARY-ARTS-ABU-DHABI-20260928','DIGITAL-ARTS-ABU-DHABI-20260929'].includes(s.id)));
 });
 test('Al Ain arts route locally; Performing Arts and Oral History route to Abu Dhabi',()=>{
  const school=data.schools.find(s=>s.region==='Al Ain');const sessions=eligibleSessions(school,all);assert.equal(sessions.length,5);
  for(const s of sessions)assert.equal(s.region,['Oral History','Performing Arts'].includes(s.pathway)?'Abu Dhabi':'Al Ain');
 });
-test('Al Dhafra can access both regional options before choosing one',()=>assert.equal(eligibleSessions(data.schools.find(s=>s.region==='Al Dhafra'),all).length,8));
+test('Al Dhafra sees only currently open regional options before choosing one',()=>assert.equal(eligibleSessions(data.schools.find(s=>s.region==='Al Dhafra'),all).length,6));
 test('Al Dhafra cannot request both Abu Dhabi and Al Ain for the same pathway',()=>{
  const school=data.schools.find(s=>s.region==='Al Dhafra');const b=body(school);const pair=data.sessions.filter(s=>s.pathway==='Visual Arts');
  b.addedTeachers=[newTeacher];b.selections=pair.map(s=>({sessionId:s.id,teacherId:newTeacher.id}));
@@ -36,6 +37,7 @@ test('Al Dhafra cannot request both Abu Dhabi and Al Ain for the same pathway',(
 });
 test('Schools without pathways can request only the open Oral History session',()=>assert.deepEqual(eligibleSessions(ad,[]).map(s=>s.id),oral.map(s=>s.id)));
 test('24 September Oral History remains in historical schedule data but is closed for new requests',()=>{assert.equal(closedOral.registrationOpen,false);assert.ok(!eligibleSessions(ad,all).some(s=>s.id===closedOral.id));const b=body();b.selections=[{sessionId:closedOral.id,teacherId:ad.teachers[0].id}];assert.throws(()=>validateRequest(b),/pathways or region/);});
+test('28 and 29 September Abu Dhabi sessions are closed server-side as well as hidden',()=>{for(const id of ['LITERARY-ARTS-ABU-DHABI-20260928','DIGITAL-ARTS-ABU-DHABI-20260929']){const session=data.sessions.find(s=>s.id===id);assert.equal(session.registrationOpen,false);assert.ok(!eligibleSessions(ad,all).some(s=>s.id===id));const b=body();b.selections=[{sessionId:id,teacherId:ad.teachers[0].id}];assert.throws(()=>validateRequest(b),/pathways or region/);}});
 test('Two different teachers cannot request the same Oral History session',()=>{const b=body();b.selections.push({sessionId:oral[0].id,teacherId:ad.teachers[1].id});assert.throws(()=>validateRequest(b),/Only one teacher/);});
 test('Repeated identical session selection is rejected, not silently deduplicated',()=>{const b=body();b.selections.push({...b.selections[0]});assert.throws(()=>validateRequest(b),/Only one teacher/);});
 test('Teacher/session pairs for a wrong region are rejected server-side',()=>{const b=body();b.selections=[{sessionId:data.sessions.find(s=>s.pathway==='Visual Arts'&&s.region==='Al Ain').id,teacherId:ad.teachers[0].id}];assert.throws(()=>validateRequest(b),/pathways or region/);});

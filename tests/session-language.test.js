@@ -5,9 +5,7 @@ const fs=require('node:fs');
 const D=require('../lib/domain');
 const I=require('../public/i18n');
 const JF=require('../lib/jotform');
-const expected={
-  'LITERARY-ARTS-ABU-DHABI-20260928':'Arabic Only',
-  'DIGITAL-ARTS-ABU-DHABI-20260929':'Bilingual',
+const expectedActive={
   'DIGITAL-ARTS-AL-AIN-20261001':'Bilingual',
   'ORAL-HISTORY-ABU-DHABI-20261001':'Arabic Only',
   'PERFORMING-ARTS-ABU-DHABI-20261002':'Arabic Only',
@@ -17,13 +15,16 @@ const expected={
 };
 test('all active sessions have the published delivery language',()=>{
   const active=D.data.sessions.filter(s=>s.registrationOpen!==false);
-  assert.equal(active.length,8);
-  for(const s of active) assert.equal(s.sessionLanguage,expected[s.id],s.id);
+  assert.equal(active.length,6);
+  for(const s of active) assert.equal(s.sessionLanguage,expectedActive[s.id],s.id);
 });
-test('closed 24 September Oral History remains excluded from active language information',()=>{
-  const closed=D.data.sessions.find(s=>s.id==='ORAL-HISTORY-ABU-DHABI-20260924');
-  assert.equal(closed.registrationOpen,false);
-  assert.equal('sessionLanguage' in closed,false);
+test('closed September sessions remain excluded from active registration while retaining historical metadata',()=>{
+  const oral=D.data.sessions.find(s=>s.id==='ORAL-HISTORY-ABU-DHABI-20260924');
+  const literary=D.data.sessions.find(s=>s.id==='LITERARY-ARTS-ABU-DHABI-20260928');
+  const digital=D.data.sessions.find(s=>s.id==='DIGITAL-ARTS-ABU-DHABI-20260929');
+  assert.equal(oral.registrationOpen,false); assert.equal('sessionLanguage' in oral,false);
+  assert.equal(literary.registrationOpen,false); assert.equal(literary.sessionLanguage,'Arabic Only');
+  assert.equal(digital.registrationOpen,false); assert.equal(digital.sessionLanguage,'Bilingual');
 });
 test('session language labels are bilingual',()=>{
   assert.equal(I.t('Language','ar'),'لغة الجلسة');

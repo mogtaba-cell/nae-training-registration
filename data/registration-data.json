@@ -17921,7 +17921,8 @@
       "region": "Abu Dhabi",
       "venue": "Abu Dhabi - ADEK 6th Floor",
       "time": "9:00 AM - 3:30 PM",
-      "sessionLanguage": "Arabic Only"
+      "sessionLanguage": "Arabic Only",
+      "registrationOpen": false
     },
     {
       "id": "DIGITAL-ARTS-ABU-DHABI-20260929",
@@ -17930,7 +17931,8 @@
       "region": "Abu Dhabi",
       "venue": "Abu Dhabi - Cultural Foundation",
       "time": "9:00 AM - 3:00 PM",
-      "sessionLanguage": "Bilingual"
+      "sessionLanguage": "Bilingual",
+      "registrationOpen": false
     },
     {
       "id": "DIGITAL-ARTS-AL-AIN-20261001",

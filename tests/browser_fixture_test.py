@@ -57,8 +57,10 @@ with sync_playwright() as p:
     page.screenshot(path=str(root/'screenshots/01-school-details.png'),full_page=True)
     page.locator('#school-next').click()
     expect(page.locator('#session-list')).to_be_visible()
-    assert page.locator('.session-card').count()==5
+    assert page.locator('.session-card').count()==3
     assert page.locator('#session-list').get_by_text('Applied Arts',exact=True).count()==0
+    assert page.locator('#card-LITERARY-ARTS-ABU-DHABI-20260928').count()==0
+    assert page.locator('#card-DIGITAL-ARTS-ABU-DHABI-20260929').count()==0
     for venue in [s['venue'] for s in data['sessions']]:
         assert venue not in page.locator('body').inner_text()
     oral=page.locator('.session-card').filter(has=page.get_by_role('heading',name='Oral History',exact=True))

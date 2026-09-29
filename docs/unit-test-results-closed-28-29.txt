@@ -1,0 +1,526 @@
+
+> nae-training-registration-requests@2.2.3 test
+> node --test tests/*.test.js
+
+TAP version 13
+# Subtest: Both separate acknowledgements are required; the legacy flag alone is not enough
+ok 1 - Both separate acknowledgements are required; the legacy flag alone is not enough
+  ---
+  duration_ms: 2.619019
+  type: 'test'
+  ...
+# Subtest: English acceptance is saved with exact requested statements and a policy version
+ok 2 - English acceptance is saved with exact requested statements and a policy version
+  ---
+  duration_ms: 6.001955
+  type: 'test'
+  ...
+# Subtest: Arabic acceptance is stored from the authoritative catalogue, not client-supplied text
+ok 3 - Arabic acceptance is stored from the authoritative catalogue, not client-supplied text
+  ---
+  duration_ms: 0.409394
+  type: 'test'
+  ...
+# Subtest: Language-neutral data IDs remain canonical English values for Jotform routing
+ok 4 - Language-neutral data IDs remain canonical English values for Jotform routing
+  ---
+  duration_ms: 0.372429
+  type: 'test'
+  ...
+# Subtest: Retries with unchanged language and consent produce exactly the same stored payload hash
+ok 5 - Retries with unchanged language and consent produce exactly the same stored payload hash
+  ---
+  duration_ms: 0.808793
+  type: 'test'
+  ...
+# Subtest: Jotform Notes include the two accepted statements without changing existing question labels
+ok 6 - Jotform Notes include the two accepted statements without changing existing question labels
+  ---
+  duration_ms: 0.687471
+  type: 'test'
+  ...
+# Subtest: Legacy Jotform sync does not claim new acknowledgements were accepted
+ok 7 - Legacy Jotform sync does not claim new acknowledgements were accepted
+  ---
+  duration_ms: 0.384678
+  type: 'test'
+  ...
+# Subtest: All 287 school records have Arabic names, and the new school starts without invented nominees
+ok 8 - All 287 school records have Arabic names, and the new school starts without invented nominees
+  ---
+  duration_ms: 0.47955
+  type: 'test'
+  ...
+# Subtest: Public bilingual names do not expose coordinator contact or identity fields
+ok 9 - Public bilingual names do not expose coordinator contact or identity fields
+  ---
+  duration_ms: 4.455925
+  type: 'test'
+  ...
+# Subtest: Search normalization supports Arabic digits, diacritics, alef and tatweel variations
+ok 10 - Search normalization supports Arabic digits, diacritics, alef and tatweel variations
+  ---
+  duration_ms: 0.623826
+  type: 'test'
+  ...
+# Subtest: Language selection defaults safely to English and uses supplied names
+ok 11 - Language selection defaults safely to English and uses supplied names
+  ---
+  duration_ms: 0.269484
+  type: 'test'
+  ...
+# Subtest: Acknowledgement wording exactly matches the supplied English and Arabic
+ok 12 - Acknowledgement wording exactly matches the supplied English and Arabic
+  ---
+  duration_ms: 0.135053
+  type: 'test'
+  ...
+# Subtest: Success messages use the exact supplied availability and confirmation wording
+ok 13 - Success messages use the exact supplied availability and confirmation wording
+  ---
+  duration_ms: 0.115253
+  type: 'test'
+  ...
+# Subtest: Dynamic validation errors are Arabic, including coordinator fields and Al Dhafra routing
+ok 14 - Dynamic validation errors are Arabic, including coordinator fields and Al Dhafra routing
+  ---
+  duration_ms: 0.574602
+  type: 'test'
+  ...
+# Subtest: Arabic input numerals are normalized server-side for new coordinator identifiers
+ok 15 - Arabic input numerals are normalized server-side for new coordinator identifiers
+  ---
+  duration_ms: 0.519459
+  type: 'test'
+  ...
+# Subtest: Performing Arts workshop display label includes Drama in both languages
+ok 16 - Performing Arts workshop display label includes Drama in both languages
+  ---
+  duration_ms: 0.141763
+  type: 'test'
+  ...
+# Subtest: Every literal user-facing catalogue key has an Arabic translation
+ok 17 - Every literal user-facing catalogue key has an Arabic translation
+  ---
+  duration_ms: 0.80012
+  type: 'test'
+  ...
+# Subtest: The two review controls are separate, required checkboxes with no default consent
+ok 18 - The two review controls are separate, required checkboxes with no default consent
+  ---
+  duration_ms: 0.391156
+  type: 'test'
+  ...
+# Subtest: Workbook import uses all 287 schools and consolidated teacher identities
+ok 19 - Workbook import uses all 287 schools and consolidated teacher identities
+  ---
+  duration_ms: 2.149034
+  type: 'test'
+  ...
+# Subtest: Verified badge corresponds only to the 59 Yes values in the workbook
+ok 20 - Verified badge corresponds only to the 59 Yes values in the workbook
+  ---
+  duration_ms: 0.167401
+  type: 'test'
+  ...
+# Subtest: Private contacts and identity numbers never occur in public school fields
+ok 21 - Private contacts and identity numbers never occur in public school fields
+  ---
+  duration_ms: 15.241389
+  type: 'test'
+  ...
+# Subtest: Public session data excludes venue
+ok 22 - Public session data excludes venue
+  ---
+  duration_ms: 0.215713
+  type: 'test'
+  ...
+# Subtest: Abu Dhabi regional routing excludes closed September sessions and invents no Applied Arts session
+ok 23 - Abu Dhabi regional routing excludes closed September sessions and invents no Applied Arts session
+  ---
+  duration_ms: 0.178488
+  type: 'test'
+  ...
+# Subtest: Al Ain arts route locally; Performing Arts and Oral History route to Abu Dhabi
+ok 24 - Al Ain arts route locally; Performing Arts and Oral History route to Abu Dhabi
+  ---
+  duration_ms: 0.129905
+  type: 'test'
+  ...
+# Subtest: Al Dhafra sees only currently open regional options before choosing one
+ok 25 - Al Dhafra sees only currently open regional options before choosing one
+  ---
+  duration_ms: 0.094922
+  type: 'test'
+  ...
+# Subtest: Al Dhafra cannot request both Abu Dhabi and Al Ain for the same pathway
+ok 26 - Al Dhafra cannot request both Abu Dhabi and Al Ain for the same pathway
+  ---
+  duration_ms: 1.668153
+  type: 'test'
+  ...
+# Subtest: Schools without pathways can request only the open Oral History session
+ok 27 - Schools without pathways can request only the open Oral History session
+  ---
+  duration_ms: 1.03973
+  type: 'test'
+  ...
+# Subtest: 24 September Oral History remains in historical schedule data but is closed for new requests
+ok 28 - 24 September Oral History remains in historical schedule data but is closed for new requests
+  ---
+  duration_ms: 0.697246
+  type: 'test'
+  ...
+# Subtest: 28 and 29 September Abu Dhabi sessions are closed server-side as well as hidden
+ok 29 - 28 and 29 September Abu Dhabi sessions are closed server-side as well as hidden
+  ---
+  duration_ms: 0.417897
+  type: 'test'
+  ...
+# Subtest: Two different teachers cannot request the same Oral History session
+ok 30 - Two different teachers cannot request the same Oral History session
+  ---
+  duration_ms: 0.311978
+  type: 'test'
+  ...
+# Subtest: Repeated identical session selection is rejected, not silently deduplicated
+ok 31 - Repeated identical session selection is rejected, not silently deduplicated
+  ---
+  duration_ms: 0.262735
+  type: 'test'
+  ...
+# Subtest: Teacher/session pairs for a wrong region are rejected server-side
+ok 32 - Teacher/session pairs for a wrong region are rejected server-side
+  ---
+  duration_ms: 0.245709
+  type: 'test'
+  ...
+# Subtest: Pathway acknowledgement is required
+ok 33 - Pathway acknowledgement is required
+  ---
+  duration_ms: 0.179299
+  type: 'test'
+  ...
+# Subtest: Pending review is set by the server, not a client status flag
+ok 34 - Pending review is set by the server, not a client status flag
+  ---
+  duration_ms: 0.39296
+  type: 'test'
+  ...
+# Subtest: School selection is validated server-side
+ok 35 - School selection is validated server-side
+  ---
+  duration_ms: 0.204206
+  type: 'test'
+  ...
+# Subtest: Unknown teacher cannot be injected into the school roster
+ok 36 - Unknown teacher cannot be injected into the school roster
+  ---
+  duration_ms: 0.267631
+  type: 'test'
+  ...
+# Subtest: Verified coordinator comes from the master, not submitted contact overrides
+ok 37 - Verified coordinator comes from the master, not submitted contact overrides
+  ---
+  duration_ms: 0.227371
+  type: 'test'
+  ...
+# Subtest: Unverified coordinator confirmation is not promoted to Verified on file
+ok 38 - Unverified coordinator confirmation is not promoted to Verified on file
+  ---
+  duration_ms: 0.085398
+  type: 'test'
+  ...
+# Subtest: Unverified coordinator cannot claim a verified-on-file action
+ok 39 - Unverified coordinator cannot claim a verified-on-file action
+  ---
+  duration_ms: 0.090226
+  type: 'test'
+  ...
+# Subtest: Changing a coordinator collects all eight fields
+ok 40 - Changing a coordinator collects all eight fields
+  ---
+  duration_ms: 0.283806
+  type: 'test'
+  ...
+# Subtest: New coordinator requires Arabic name and both emails
+ok 41 - New coordinator requires Arabic name and both emails
+  ---
+  duration_ms: 0.238628
+  type: 'test'
+  ...
+# Subtest: Coordinator Emirates ID format is validated
+ok 42 - Coordinator Emirates ID format is validated
+  ---
+  duration_ms: 0.20025
+  type: 'test'
+  ...
+# Subtest: A school with no teachers may add a teacher and submit a request
+ok 43 - A school with no teachers may add a teacher and submit a request
+  ---
+  duration_ms: 0.231357
+  type: 'test'
+  ...
+# Subtest: Additional teacher form requires all six fields
+ok 44 - Additional teacher form requires all six fields
+  ---
+  duration_ms: 0.290926
+  type: 'test'
+  ...
+# Subtest: Missing existing eSIS is requested rather than inventing an identifier
+ok 45 - Missing existing eSIS is requested rather than inventing an identifier
+  ---
+  duration_ms: 0.398999
+  type: 'test'
+  ...
+# Subtest: Idempotent input produces the same hash and request-record IDs
+ok 46 - Idempotent input produces the same hash and request-record IDs
+  ---
+  duration_ms: 0.321362
+  type: 'test'
+  ...
+# Subtest: Changing a request changes its hash
+ok 47 - Changing a request changes its hash
+  ---
+  duration_ms: 0.186851
+  type: 'test'
+  ...
+# Subtest: Same additional teacher is reused across multiple distinct sessions
+ok 48 - Same additional teacher is reused across multiple distinct sessions
+  ---
+  duration_ms: 12.503411
+  type: 'test'
+  ...
+# Subtest: Duplicate additional teacher eSIS is rejected
+ok 49 - Duplicate additional teacher eSIS is rejected
+  ---
+  duration_ms: 0.369474
+  type: 'test'
+  ...
+# Subtest: A listed teacher may be reused for a different pathway session
+ok 50 - A listed teacher may be reused for a different pathway session
+  ---
+  duration_ms: 0.328844
+  type: 'test'
+  ...
+# Subtest: A school-record teacher cannot be duplicated through the add-new flow
+ok 51 - A school-record teacher cannot be duplicated through the add-new flow
+  ---
+  duration_ms: 0.273651
+  type: 'test'
+  ...
+# Subtest: Coordinator is available as a reusable school-record person when not already in the teacher roster
+ok 52 - Coordinator is available as a reusable school-record person when not already in the teacher roster
+  ---
+  duration_ms: 0.217286
+  type: 'test'
+  ...
+# Subtest: A verified coordinator cannot be replaced through a forged change action
+ok 53 - A verified coordinator cannot be replaced through a forged change action
+  ---
+  duration_ms: 0.167391
+  type: 'test'
+  ...
+# Subtest: Jotform mapper writes request status and all new information, not attendance confirmation
+ok 54 - Jotform mapper writes request status and all new information, not attendance confirmation
+  ---
+  duration_ms: 2.218369
+  type: 'test'
+  ...
+# Subtest: Jotform serializes multi-select school pathways as separate answers
+ok 55 - Jotform serializes multi-select school pathways as separate answers
+  ---
+  duration_ms: 0.30635
+  type: 'test'
+  ...
+# Subtest: Jotform date serialization has the correct day, month, and year
+ok 56 - Jotform date serialization has the correct day, month, and year
+  ---
+  duration_ms: 0.159529
+  type: 'test'
+  ...
+# Subtest: Optional school code gate validates the school-specific HMAC
+ok 57 - Optional school code gate validates the school-specific HMAC
+  ---
+  duration_ms: 2.024147
+  type: 'test'
+  ...
+# Subtest: Persistent schema contains cross-request uniqueness, RLS, atomic submission and restricted access
+ok 58 - Persistent schema contains cross-request uniqueness, RLS, atomic submission and restricted access
+  ---
+  duration_ms: 0.571417
+  type: 'test'
+  ...
+# Subtest: Every school response omits coordinator/teacher contact values
+ok 59 - Every school response omits coordinator/teacher contact values
+  ---
+  duration_ms: 1.890226
+  type: 'test'
+  ...
+# Subtest: Missing database configuration fails closed instead of accepting an unprotected request
+ok 60 - Missing database configuration fails closed instead of accepting an unprotected request
+  ---
+  duration_ms: 0.716154
+  type: 'test'
+  ...
+# Subtest: Public assets contain neither coordinator contacts nor legacy confirmation banners
+ok 61 - Public assets contain neither coordinator contacts nor legacy confirmation banners
+  ---
+  duration_ms: 0.831177
+  type: 'test'
+  ...
+# Portal operation failed: STORAGE_UNAVAILABLE
+# Jotform sync pending; request saved.
+# Subtest: School directory shows Already submitted flags without contacts and is never cached
+ok 62 - School directory shows Already submitted flags without contacts and is never cached
+  ---
+  duration_ms: 3.528314
+  type: 'test'
+  ...
+# Subtest: Selecting a submitted school returns a blocker, not its roster or coordinator
+ok 63 - Selecting a submitted school returns a blocker, not its roster or coordinator
+  ---
+  duration_ms: 0.575053
+  type: 'test'
+  ...
+# Subtest: Minimal public submitted status does not disclose protected information when access codes are enabled
+ok 64 - Minimal public submitted status does not disclose protected information when access codes are enabled
+  ---
+  duration_ms: 0.705138
+  type: 'test'
+  ...
+# Subtest: Unsubmitted schools still require the correct school access code
+ok 65 - Unsubmitted schools still require the correct school access code
+  ---
+  duration_ms: 1.120512
+  type: 'test'
+  ...
+# Subtest: School lookup rechecks durable status instead of trusting an earlier directory result
+ok 66 - School lookup rechecks durable status instead of trusting an earlier directory result
+  ---
+  duration_ms: 0.832018
+  type: 'test'
+  ...
+# Subtest: Database outage does not mistakenly label an already-submitted school as available
+ok 67 - Database outage does not mistakenly label an already-submitted school as available
+  ---
+  duration_ms: 0.883085
+  type: 'test'
+  ...
+# Subtest: Store translates school-wide lock rejection to a clear HTTP 409 business error
+ok 68 - Store translates school-wide lock rejection to a clear HTTP 409 business error
+  ---
+  duration_ms: 0.829234
+  type: 'test'
+  ...
+# Subtest: Store does not confuse an unrelated unique violation with a school lock
+ok 69 - Store does not confuse an unrelated unique violation with a school lock
+  ---
+  duration_ms: 0.405989
+  type: 'test'
+  ...
+# Subtest: School status fetch normalizes eSIS and requests only a school identifier
+ok 70 - School status fetch normalizes eSIS and requests only a school identifier
+  ---
+  duration_ms: 0.810986
+  type: 'test'
+  ...
+# Subtest: First school submission commits before synchronization and returns receipt
+ok 71 - First school submission commits before synchronization and returns receipt
+  ---
+  duration_ms: 3.626962
+  type: 'test'
+  ...
+# Subtest: Identical saved request retry returns its existing receipt instead of a second request
+ok 72 - Identical saved request retry returns its existing receipt instead of a second request
+  ---
+  duration_ms: 0.836906
+  type: 'test'
+  ...
+# Subtest: A school-wide conflict stops a stale-tab request before any Jotform sync
+ok 73 - A school-wide conflict stops a stale-tab request before any Jotform sync
+  ---
+  duration_ms: 0.598728
+  type: 'test'
+  ...
+# Subtest: Jotform synchronization outage does not undo a saved request or school lock
+ok 74 - Jotform synchronization outage does not undo a saved request or school lock
+  ---
+  duration_ms: 0.690896
+  type: 'test'
+  ...
+# Subtest: Fresh setup and migration include atomic school-wide locking and preserve history
+ok 75 - Fresh setup and migration include atomic school-wide locking and preserve history
+  ---
+  duration_ms: 0.466189
+  type: 'test'
+  ...
+# Subtest: The blocked UI has no refresh-availability workaround or unlocked next step
+ok 76 - The blocked UI has no refresh-availability workaround or unlocked next step
+  ---
+  duration_ms: 0.398258
+  type: 'test'
+  ...
+# Subtest: Legacy Jotform records for multiple sessions are consolidated into one school request
+ok 77 - Legacy Jotform records for multiple sessions are consolidated into one school request
+  ---
+  duration_ms: 10.13067
+  type: 'test'
+  ...
+# Subtest: published workshop session times match the September 22 schedule update
+ok 78 - published workshop session times match the September 22 schedule update
+  ---
+  duration_ms: 0.839259
+  type: 'test'
+  ...
+# Subtest: 24, 28 and 29 September sessions are retained for history but closed to new registration
+ok 79 - 24, 28 and 29 September sessions are retained for history but closed to new registration
+  ---
+  duration_ms: 0.176746
+  type: 'test'
+  ...
+# Subtest: public config hides all closed September sessions
+ok 80 - public config hides all closed September sessions
+  ---
+  duration_ms: 1.301764
+  type: 'test'
+  ...
+# Subtest: all active sessions have the published delivery language
+ok 81 - all active sessions have the published delivery language
+  ---
+  duration_ms: 0.688724
+  type: 'test'
+  ...
+# Subtest: closed September sessions remain excluded from active registration while retaining historical metadata
+ok 82 - closed September sessions remain excluded from active registration while retaining historical metadata
+  ---
+  duration_ms: 0.126349
+  type: 'test'
+  ...
+# Subtest: session language labels are bilingual
+ok 83 - session language labels are bilingual
+  ---
+  duration_ms: 0.497125
+  type: 'test'
+  ...
+# Subtest: session language is visible in session selection and review UI
+ok 84 - session language is visible in session selection and review UI
+  ---
+  duration_ms: 0.34649
+  type: 'test'
+  ...
+# Subtest: Jotform notes include session language without requiring a new question
+ok 85 - Jotform notes include session language without requiring a new question
+  ---
+  duration_ms: 0.247752
+  type: 'test'
+  ...
+1..85
+# tests 85
+# suites 0
+# pass 85
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 191.682236
