@@ -25224,7 +25224,8 @@
       "region": "Al Ain",
       "venue": "Alain - Al Qattara Art Center",
       "time": "9:00 AM - 3:00 PM",
-      "sessionLanguage": "Bilingual"
+      "sessionLanguage": "Bilingual",
+      "registrationOpen": false
     },
     {
       "id": "ORAL-HISTORY-ABU-DHABI-20261001",
@@ -25233,7 +25234,8 @@
       "region": "Abu Dhabi",
       "venue": "Abu Dhabi - ADEK (6th Floor)",
       "time": "10:00 AM - 1:00 PM",
-      "sessionLanguage": "Arabic Only"
+      "sessionLanguage": "Arabic Only",
+      "registrationOpen": false
     },
     {
       "id": "PERFORMING-ARTS-ABU-DHABI-20261002",
@@ -25242,7 +25244,8 @@
       "region": "Abu Dhabi",
       "venue": "Abu Dhabi -  ADEK 6th Floor",
       "time": "9:00 AM - 12:00 PM",
-      "sessionLanguage": "Arabic Only"
+      "sessionLanguage": "Arabic Only",
+      "registrationOpen": false
     },
     {
       "id": "LITERARY-ARTS-AL-AIN-20261005",

@@ -6,25 +6,25 @@ const D=require('../lib/domain');
 const I=require('../public/i18n');
 const JF=require('../lib/jotform');
 const expectedActive={
-  'DIGITAL-ARTS-AL-AIN-20261001':'Bilingual',
-  'ORAL-HISTORY-ABU-DHABI-20261001':'Arabic Only',
-  'PERFORMING-ARTS-ABU-DHABI-20261002':'Arabic Only',
   'LITERARY-ARTS-AL-AIN-20261005':'Arabic Only',
   'VISUAL-ARTS-ABU-DHABI-20261006':'Bilingual',
   'VISUAL-ARTS-AL-AIN-20261008':'Bilingual'
 };
 test('all active sessions have the published delivery language',()=>{
   const active=D.data.sessions.filter(s=>s.registrationOpen!==false);
-  assert.equal(active.length,6);
+  assert.equal(active.length,3);
   for(const s of active) assert.equal(s.sessionLanguage,expectedActive[s.id],s.id);
 });
-test('closed September sessions remain excluded from active registration while retaining historical metadata',()=>{
-  const oral=D.data.sessions.find(s=>s.id==='ORAL-HISTORY-ABU-DHABI-20260924');
-  const literary=D.data.sessions.find(s=>s.id==='LITERARY-ARTS-ABU-DHABI-20260928');
-  const digital=D.data.sessions.find(s=>s.id==='DIGITAL-ARTS-ABU-DHABI-20260929');
-  assert.equal(oral.registrationOpen,false); assert.equal('sessionLanguage' in oral,false);
-  assert.equal(literary.registrationOpen,false); assert.equal(literary.sessionLanguage,'Arabic Only');
-  assert.equal(digital.registrationOpen,false); assert.equal(digital.sessionLanguage,'Bilingual');
+test('closed sessions remain excluded from active registration while retaining historical metadata',()=>{
+  const expected={
+    'ORAL-HISTORY-ABU-DHABI-20260924':'',
+    'LITERARY-ARTS-ABU-DHABI-20260928':'Arabic Only',
+    'DIGITAL-ARTS-ABU-DHABI-20260929':'Bilingual',
+    'DIGITAL-ARTS-AL-AIN-20261001':'Bilingual',
+    'ORAL-HISTORY-ABU-DHABI-20261001':'Arabic Only',
+    'PERFORMING-ARTS-ABU-DHABI-20261002':'Arabic Only'
+  };
+  for(const [id,language] of Object.entries(expected)){const session=D.data.sessions.find(s=>s.id===id);assert.equal(session.registrationOpen,false);assert.equal(session.sessionLanguage||'',language);}
 });
 test('session language labels are bilingual',()=>{
   assert.equal(I.t('Language','ar'),'لغة الجلسة');
