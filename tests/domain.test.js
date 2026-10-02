@@ -10,16 +10,17 @@ const closedOral=data.sessions.find(s=>s.id==='ORAL-HISTORY-ABU-DHABI-20260924')
 const newCoordinator={nameEnglish:'Test Coordinator',nameArabic:'Test Arabic Name',esis:'PASS-TEST-C',position:'Coordinator',emiratesId:'784-2000-0000000-0',workEmail:'coordinator@example.invalid',primaryEmail:'primary@example.invalid',mobile:'0500000000'};
 const newTeacher={id:'A-test',nameEnglish:'Test Teacher',nameArabic:'Test Arabic Name',esis:'PASS-TEST-1',position:'Teacher',workEmail:'teacher@example.invalid',mobile:'0500000000'};
 function body(school=ad){const session=eligibleSessions(school,all)[0];return {requestId:crypto.randomUUID(),schoolEsis:school.schoolEsis,pathways:[...all],pathwaysReviewed:true,coordinator:{action:school.coordinator.verified?'verified':school.coordinator.nameEnglish?'confirm':'add',...(!school.coordinator.nameEnglish?newCoordinator:{})},addedTeachers:[],teacherIdentifiers:{},selections:[{sessionId:session.id,teacherId:school.teachers[0]?.id||newTeacher.id}],acknowledgement:true,language:'en',acknowledgements:{onceOnly:true,emailConfirmation:true}};}
-test('Refreshed directory uses all 290 schools and 1093 attached teacher/coordinator roster records',()=>{
- assert.equal(data.schools.length,290);assert.equal(new Set(data.schools.map(s=>s.schoolEsis)).size,290);
+test('Current directory uses all 291 schools and 1093 attached teacher/coordinator roster records',()=>{
+ assert.equal(data.schools.length,291);assert.equal(new Set(data.schools.map(s=>s.schoolEsis)).size,291);
  assert.equal(data.schools.reduce((n,s)=>n+s.teachers.length,0),1093);
  for(const s of data.schools){assert.equal(new Set(s.teachers.map(t=>t.id)).size,s.teachers.length);assert.ok(s.registeredPathways.every(p=>all.includes(p)));}
 });
-test('Teacher-list schools are added and the manually supplied 9105 school starts with no invented people or pathways',()=>{
- const bayan=domain.getSchool('6026'),maple=domain.getSchool('9255'),ens=domain.getSchool('9105');
+test('Teacher-list and manually supplied schools are available without invented people or pathways',()=>{
+ const bayan=domain.getSchool('6026'),maple=domain.getSchool('9255'),ens=domain.getSchool('9105'),umk=domain.getSchool('500AD');
  assert.equal(bayan.schoolName,'Al Bayan School');assert.equal(bayan.teachers.length,1);assert.deepEqual(bayan.registeredPathways,[]);
  assert.equal(maple.schoolName,'Maplewood Canadian International School');assert.equal(maple.teachers.length,3);assert.deepEqual(maple.registeredPathways,[]);
  assert.equal(ens.schoolName,'Emirates National Schools - Mbz');assert.equal(ens.schoolNameArabic,'مدرسة الإمارات الوطنية - محمد بن زايد');assert.equal(ens.region,'Abu Dhabi');assert.equal(ens.teachers.length,0);assert.equal(ens.coordinator.nameEnglish,'');assert.deepEqual(ens.registeredPathways,[]);
+ assert.equal(umk.schoolName,'Um Kolthoom Girls School');assert.equal(umk.schoolNameArabic,'مدرسة أم كلثوم بنات');assert.equal(umk.schoolType,'Public');assert.equal(umk.region,'Al Ain');assert.equal(umk.teachers.length,0);assert.equal(umk.coordinator.nameEnglish,'');assert.deepEqual(umk.registeredPathways,[]);
 });
 test('Verified badge corresponds only to the 59 Yes values in the workbook',()=>assert.equal(data.schools.filter(s=>s.coordinator.verified).length,59));
 test('Private contacts and identity numbers never occur in public school fields',()=>{

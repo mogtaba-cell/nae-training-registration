@@ -1,22 +1,15 @@
-# 1–2 October session closure patch
+# Patch instructions - add school 500AD
 
-This patch closes all workshop registration sessions scheduled for 1 and 2 October 2026 while preserving all existing records.
+This patch is intended to be applied on top of the latest GitHub `main` that already contains the 29 September teacher-data refresh and the 1-2 October session closures.
 
-Closed in this patch:
-- DIGITAL-ARTS-AL-AIN-20261001
-- ORAL-HISTORY-ABU-DHABI-20261001
-- PERFORMING-ARTS-ABU-DHABI-20261002
+It adds `500AD` - Um Kolthoom Girls School / مدرسة أم كلثوم بنات as an Al Ain public school with no invented teachers, coordinator, or registered pathways. It also updates the teacher-roster importer so future roster refreshes retain this manually approved school.
 
-Already closed and unchanged:
-- ORAL-HISTORY-ABU-DHABI-20260924
-- LITERARY-ARTS-ABU-DHABI-20260928
-- DIGITAL-ARTS-ABU-DHABI-20260929
+After pulling `main`, copy the patch files into the repository root, replacing matching files, then run:
 
-Still open:
-- LITERARY-ARTS-AL-AIN-20261005
-- VISUAL-ARTS-ABU-DHABI-20261006
-- VISUAL-ARTS-AL-AIN-20261008
+```powershell
+npm test
+git status
+git diff
+```
 
-The runtime behavior is driven by `data/registration-data.json`. The existing `lib/domain.js` and `api/config.js` safeguards hide closed sessions and reject stale/manual submissions to them.
-
-No database migration and no Jotform change are required.
+No Supabase migration and no Jotform form change are required.

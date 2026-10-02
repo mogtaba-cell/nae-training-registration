@@ -47,10 +47,10 @@ See `data/teacher-data-update-report.json` for exact counts and the source SHA-2
 
 ## Counts after the update
 
-- Searchable schools: **290**
+- Searchable schools after the teacher-data refresh: **290**
 - Private teacher/coordinator roster records: **1,093**
 - Verified coordinators preserved: **59**
-- School names with supplied Arabic: **288**
+- School names with supplied Arabic after the teacher-data refresh: **288**
 - Schools using English fallback in Arabic: `6026`, `9255`
 
 ## Deployment impact
@@ -58,3 +58,19 @@ See `data/teacher-data-update-report.json` for exact counts and the source SHA-2
 No Supabase migration is required. Existing submitted-school locks and historical submissions are untouched. No Jotform question needs to be added or changed.
 
 This is a code/data deployment only. Pull the latest GitHub `main` first, apply the changed files, run `npm test`, then push to GitHub so Vercel deploys the new roster.
+
+## Later manual school addition - 2 October 2026
+
+The registration directory now also includes:
+
+- `500AD` - Um Kolthoom Girls School
+- Arabic: `مدرسة أم كلثوم بنات`
+- Region: Al Ain
+- School type: Public / `حكومية`
+- No teacher records on file
+- No registered pathways on file
+- No coordinator on file
+
+It can select the school and add pathways, coordinator details and teachers through the normal workflow.
+The current searchable directory is **291 schools**, including **289** with supplied Arabic school names.
+The private teacher/coordinator roster remains **1,093 records**.

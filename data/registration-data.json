@@ -23794,6 +23794,28 @@
       "regionArabic": "العين"
     },
     {
+      "schoolEsis": "500AD",
+      "schoolName": "Um Kolthoom Girls School",
+      "schoolNameArabic": "مدرسة أم كلثوم بنات",
+      "schoolType": "Public",
+      "schoolTypeArabic": "حكومية",
+      "region": "Al Ain",
+      "regionArabic": "العين",
+      "registeredPathways": [],
+      "coordinator": {
+        "nameEnglish": "",
+        "nameArabic": "",
+        "esis": "",
+        "position": "",
+        "emiratesId": "",
+        "workEmail": "",
+        "primaryEmail": "",
+        "mobile": "",
+        "verified": false
+      },
+      "teachers": []
+    },
+    {
       "schoolEsis": "9216",
       "schoolName": "United Private School - Yahar",
       "schoolType": "Private",

@@ -39,8 +39,9 @@ The supplied file also has one additional school, eSIS `2114AD` (AlDhabi School)
 It is included with its supplied Arabic name and region, no invented coordinator,
 no registered pathways, and no nominated teachers. The school can add its details
 through the existing workflow. That bilingual release contained 287 schools. The later
-29 September teacher-data refresh increases the current searchable directory to 290; see
-`TEACHER-DATA-UPDATE.md` and `data/teacher-data-update-report.json`.
+29 September teacher-data refresh increased the searchable directory to 290. The later manual
+addition of `500AD` (Um Kolthoom Girls School) brings the current searchable directory to 291; see
+`TEACHER-DATA-UPDATE.md` and `ADD-SCHOOL-500AD.md`. The teacher-data JSON report remains the historical report for the 29 September refresh.
 
 ## Do I need to run another Supabase migration?
 

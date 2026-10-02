@@ -11,7 +11,7 @@ Behavior:
   when the coordinator still matches the same person.
 - Valid schools in the CSV that are not yet in the directory are added with no
   registered school pathways. Arabic school names are never invented.
-- The manually approved school 9105 is retained even though it has no people yet.
+- Manually approved schools 9105 and 500AD are retained even when they have no people yet.
 - Obvious blank/test rows are ignored and recorded in the report.
 """
 from __future__ import annotations
@@ -43,6 +43,22 @@ MANUAL_SCHOOLS = [
         "schoolTypeArabic": "خاصة",
         "region": "Abu Dhabi",
         "regionArabic": "أبوظبي",
+        "registeredPathways": [],
+        "coordinator": {
+            "nameEnglish": "", "nameArabic": "", "esis": "", "position": "",
+            "emiratesId": "", "workEmail": "", "primaryEmail": "", "mobile": "",
+            "verified": False,
+        },
+        "teachers": [],
+    },
+    {
+        "schoolEsis": "500AD",
+        "schoolName": "Um Kolthoom Girls School",
+        "schoolNameArabic": "مدرسة أم كلثوم بنات",
+        "schoolType": "Public",
+        "schoolTypeArabic": "حكومية",
+        "region": "Al Ain",
+        "regionArabic": "العين",
         "registeredPathways": [],
         "coordinator": {
             "nameEnglish": "", "nameArabic": "", "esis": "", "position": "",
@@ -276,7 +292,7 @@ def main() -> None:
         if any(role.casefold() == "school coordinator" for role in roles):
             coordinator_rows[school_id] = row
 
-    # Add/retain the manually approved school with no invented people/pathways.
+    # Add/retain manually approved schools with no invented people/pathways.
     for manual in MANUAL_SCHOOLS:
         if manual["schoolEsis"] not in schools:
             schools[manual["schoolEsis"]] = json.loads(json.dumps(manual, ensure_ascii=False))

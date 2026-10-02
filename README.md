@@ -55,8 +55,8 @@ Keep this repository private. Existing coordinator emails, phones and identity
 numbers are not returned by school lookup. School directories include only names,
 eSIS, region and submitted status. Most Arabic school names came from the supplied `schools (9).csv`. The 29 September
 teacher-data refresh adds two teacher-list schools without supplied Arabic school names,
-so Arabic safely falls back to English for those two. School `9105` uses the Arabic name
-provided with this update. See `TEACHER-DATA-UPDATE.md`.
+so Arabic safely falls back to English for those two. Schools `9105` and `500AD` use the Arabic names
+provided manually with their additions. See `TEACHER-DATA-UPDATE.md`.
 
 Only the language preference is saved in browser storage. Draft personal details
 stay in page memory. English canonical pathway/session IDs continue to be used in
@@ -77,5 +77,5 @@ python scripts/import_teacher_coordinator_csv.py "C:\path\to\allteachersschoolco
 ```
 
 The roster importer preserves existing registered school pathways, refreshes the attached
-teacher/person data, and retains the manually approved `9105` school. No secret files,
+teacher/person data, and retains the manually approved `9105` and `500AD` schools. No secret files,
 Node modules or font files are distributed in this package.
